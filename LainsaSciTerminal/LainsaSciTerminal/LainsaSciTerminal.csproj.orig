@@ -1,0 +1,294 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{85A7393D-BE2C-4FBA-8041-FA244BFFD89B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LainsaSciTerminal</RootNamespace>
+    <AssemblyName>LainsaSciTerminal</AssemblyName>
+    <ProjectTypeGuids>{4D628B5B-2FBC-4AA6-8C16-197242AEB884};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PlatformFamilyName>PocketPC</PlatformFamilyName>
+    <PlatformID>b2c48bd2-963d-4549-9169-1fa021dce484</PlatformID>
+    <OSVersion>5.2</OSVersion>
+    <DeployDirSuffix>LainsaSciTerminal</DeployDirSuffix>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <NativePlatformName>Windows Mobile 6 Professional SDK</NativePlatformName>
+    <FormFactorID>
+    </FormFactorID>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.WindowsCE.Forms" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.0.0, Culture=neutral, PublicKeyToken=3be235df1c8d2ad3, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CNumericoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CNumericoForm.Designer.cs">
+      <DependentUpon>CNumericoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CFechaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CFechaForm.Designer.cs">
+      <DependentUpon>CFechaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CFinalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CFinalForm.Designer.cs">
+      <DependentUpon>CFinalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodBarrasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodBarrasForm.Designer.cs">
+      <DependentUpon>CodBarrasForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CTextoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CTextoForm.Designer.cs">
+      <DependentUpon>CTextoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CTetraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CTetraForm.Designer.cs">
+      <DependentUpon>CTetraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CSNForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CSNForm.Designer.cs">
+      <DependentUpon>CSNForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DistribuidorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DistribuidorForm.Designer.cs">
+      <DependentUpon>DistribuidorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForm.Designer.cs">
+      <DependentUpon>MenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+<<<<<<< HEAD
+    <Compile Include="ProgramaEditViewDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgramaEditViewDialog.Designer.cs">
+      <DependentUpon>ProgramaEditViewDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgramasForm.Designer.cs">
+      <DependentUpon>ProgramasForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramaSummaryViewDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgramaSummaryViewDialog.Designer.cs">
+      <DependentUpon>ProgramaSummaryViewDialog.cs</DependentUpon>
+=======
+    <Compile Include="ProgramacionesGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgramacionesGrid.Designer.cs">
+      <DependentUpon>ProgramacionesGrid.cs</DependentUpon>
+>>>>>>> c893a9f37cd12052373d77b05c5053a9a6334005
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CNumericoForm.resx">
+      <DependentUpon>CNumericoForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CFechaForm.resx">
+      <DependentUpon>CFechaForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CFinalForm.resx">
+      <DependentUpon>CFinalForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodBarrasForm.resx">
+      <DependentUpon>CodBarrasForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CTextoForm.resx">
+      <DependentUpon>CTextoForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CTetraForm.resx">
+      <DependentUpon>CTetraForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CSNForm.resx">
+      <DependentUpon>CSNForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DistribuidorForm.resx">
+      <DependentUpon>DistribuidorForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForm.resx">
+      <DependentUpon>MenuForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+<<<<<<< HEAD
+    <EmbeddedResource Include="ProgramaEditViewDialog.resx">
+      <DependentUpon>ProgramaEditViewDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgramasForm.resx">
+      <DependentUpon>ProgramasForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgramaSummaryViewDialog.resx">
+      <DependentUpon>ProgramaSummaryViewDialog.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="ProgramacionesGrid.resx">
+      <DependentUpon>ProgramacionesGrid.cs</DependentUpon>
+>>>>>>> c893a9f37cd12052373d77b05c5053a9a6334005
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RevisionesGrid.resx">
+      <DependentUpon>RevisionesGrid.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+<<<<<<< HEAD
+    <Compile Include="terminalDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>terminalDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="terminalDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>terminalDataSet1.xsd</DependentUpon>
+=======
+    <Compile Include="RevisionesGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RevisionesGrid.Designer.cs">
+      <DependentUpon>RevisionesGrid.cs</DependentUpon>
+>>>>>>> c893a9f37cd12052373d77b05c5053a9a6334005
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\falk.png" />
+    <Content Include="terminal.sdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LainsaSciTerminalLib\LainsaSciTerminalLib.csproj">
+      <Project>{E6BE4CAF-F7C5-4B01-9497-BB03ACE75DC9}</Project>
+      <Name>LainsaSciTerminalLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="terminalDataSet.xsc">
+      <DependentUpon>terminalDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="terminalDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>terminalDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="terminalDataSet.xss">
+      <DependentUpon>terminalDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="terminalDataSet1.xsc">
+      <DependentUpon>terminalDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="terminalDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>terminalDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="terminalDataSet1.xss">
+      <DependentUpon>terminalDataSet1.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}">
+        <HostingProcess disable="1" />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

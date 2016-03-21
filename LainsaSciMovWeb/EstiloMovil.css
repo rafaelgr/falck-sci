@@ -1,0 +1,44 @@
+﻿body 
+{
+
+}
+.marcoMobil
+{
+    width:200px;
+    height:320px;
+}
+.textoNormalMarco
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    padding:5px;
+}
+.textoReducidoMarco
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    padding:2px;
+}
+.textoNormalRojo
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #FF0000;
+}
+.textoTituloMarco
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    text-align:center;
+    padding:5px;
+}
+.bordeInferior
+{
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+.bordeSuperior
+{
+    border-top-style: solid;
+    border-top-width: 1px;
+}

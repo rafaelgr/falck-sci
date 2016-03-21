@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1A1D9155-0BC5-4B58-A9C1-739A16E63DD2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LainsaSciInformes</RootNamespace>
+    <AssemblyName>LainsaSciInformes</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.OpenAccess, Version=2014.1.403.2, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.OpenAccess.35.Extensions, Version=2014.1.403.2, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.OpenAccess.40.Extensions, Version=2014.1.403.2, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Reporting, Version=7.2.14.127, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnoView.cs" />
+    <Compile Include="BajaView.cs" />
+    <Compile Include="CntInforme.cs" />
+    <Compile Include="CntProgramacionInformes.cs" />
+    <Compile Include="ConsultaRevision.cs" />
+    <Compile Include="RptFacturableEmpresa.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptFacturableEmpresa.Designer.cs">
+      <DependentUpon>RptFacturableEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptIncidenciaEmpresa.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptIncidenciaEmpresa.Designer.cs">
+      <DependentUpon>RptIncidenciaEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptInventario.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptInventario.Designer.cs">
+      <DependentUpon>RptInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptResumenEmpresa.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptResumenEmpresa.Designer.cs">
+      <DependentUpon>RptResumenEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InformeDispositivo.cs" />
+    <Compile Include="InformePlanta.cs" />
+    <Compile Include="InformeResumenRevision.cs" />
+    <Compile Include="InformeRevision.cs" />
+    <Compile Include="NombreInforme.cs" />
+    <Compile Include="Periodo.cs" />
+    <Compile Include="ProgramacionInformes.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="PruebaHidrostatica.cs" />
+    <Compile Include="RptCartaActa.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptCartaActa.Designer.cs">
+      <DependentUpon>RptCartaActa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptConsultaDispositivo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptConsultaDispositivo.Designer.cs">
+      <DependentUpon>RptConsultaDispositivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptConsultaDispositivos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptConsultaDispositivos.Designer.cs">
+      <DependentUpon>RptConsultaDispositivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptConsultaDispositivosGeneral.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptConsultaDispositivosGeneral.Designer.cs">
+      <DependentUpon>RptConsultaDispositivosGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptConsultaRevisionGeneral.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptConsultaRevisionGeneral.Designer.cs">
+      <DependentUpon>RptConsultaRevisionGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptFacturableEmpresaTipoDispositivo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptFacturableEmpresaTipoDispositivo.Designer.cs">
+      <DependentUpon>RptFacturableEmpresaTipoDispositivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptInfConsultaRevision.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptInfConsultaRevision.Designer.cs">
+      <DependentUpon>RptInfConsultaRevision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptInformeActa.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptInformeActa.designer.cs">
+      <DependentUpon>RptInformeActa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptInformeActaEmpresa.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptInformeActaEmpresa.Designer.cs">
+      <DependentUpon>RptInformeActaEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptInformePlanta.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptInformePlanta.Designer.cs">
+      <DependentUpon>RptInformePlanta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptResumenEmpresaTipoDispositivo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptResumenEmpresaTipoDispositivo.Designer.cs">
+      <DependentUpon>RptResumenEmpresaTipoDispositivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptResumenRevision.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptResumenRevision.Designer.cs">
+      <DependentUpon>RptResumenRevision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptRevisionDispositivo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptRevisionDispositivo.Designer.cs">
+      <DependentUpon>RptRevisionDispositivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptRevisionesFacturablesInstalacion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptRevisionesFacturablesInstalacion.Designer.cs">
+      <DependentUpon>RptRevisionesFacturablesInstalacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptFacturableEmpresaInstalacion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptFacturableEmpresaInstalacion.Designer.cs">
+      <DependentUpon>RptFacturableEmpresaInstalacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptRevisionesFacturablesTipoDispositivo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptRevisionesFacturablesTipoDispositivo.Designer.cs">
+      <DependentUpon>RptRevisionesFacturablesTipoDispositivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptRevisionesInstalacion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptRevisionesInstalacion.Designer.cs">
+      <DependentUpon>RptRevisionesInstalacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RevisionView.cs" />
+    <Compile Include="RptCambiosInstalacion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptCambiosInstalacion.Designer.cs">
+      <DependentUpon>RptCambiosInstalacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptBajasInstalacion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptBajasInstalacion.Designer.cs">
+      <DependentUpon>RptBajasInstalacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptRevisionesTipoDispositivo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptRevisionesTipoDispositivo.Designer.cs">
+      <DependentUpon>RptRevisionesTipoDispositivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptRevisionFormulario.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptRevisionFormulario.Designer.cs">
+      <DependentUpon>RptRevisionFormulario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptTipoPlantilla.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptTipoPlantilla.Designer.cs">
+      <DependentUpon>RptTipoPlantilla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResEmpresaInstalacion.cs" />
+    <Compile Include="RptResumenEmpresaInstalacion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptResumenEmpresaInstalacion.Designer.cs">
+      <DependentUpon>RptResumenEmpresaInstalacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResBaja.cs" />
+    <Compile Include="ResCambioView.cs" />
+    <Compile Include="ResTipo.cs" />
+    <Compile Include="RevViewCab.cs" />
+    <Compile Include="RptPrograma.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptPrograma.Designer.cs">
+      <DependentUpon>RptPrograma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptPrograma2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptPrograma2.Designer.cs">
+      <DependentUpon>RptPrograma2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptTipoPlantillaChart.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptTipoPlantillaChart.Designer.cs">
+      <DependentUpon>RptTipoPlantillaChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Test1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Test1.Designer.cs">
+      <DependentUpon>Test1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestingConnection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TestingConnection.Designer.cs">
+      <DependentUpon>TestingConnection.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RptFacturableEmpresa.resx">
+      <DependentUpon>RptFacturableEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptIncidenciaEmpresa.resx">
+      <DependentUpon>RptIncidenciaEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptInventario.resx">
+      <DependentUpon>RptInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptResumenEmpresa.resx">
+      <DependentUpon>RptResumenEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptCartaActa.resx">
+      <DependentUpon>RptCartaActa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptConsultaDispositivo.resx">
+      <DependentUpon>RptConsultaDispositivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptConsultaDispositivos.resx">
+      <DependentUpon>RptConsultaDispositivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptConsultaDispositivosGeneral.resx">
+      <DependentUpon>RptConsultaDispositivosGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptConsultaRevisionGeneral.resx">
+      <DependentUpon>RptConsultaRevisionGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptFacturableEmpresaTipoDispositivo.resx">
+      <DependentUpon>RptFacturableEmpresaTipoDispositivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptInfConsultaRevision.resx">
+      <DependentUpon>RptInfConsultaRevision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptInformeActa.es.resx">
+      <DependentUpon>RptInformeActa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptInformeActa.resx">
+      <DependentUpon>RptInformeActa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptInformeActaEmpresa.resx">
+      <DependentUpon>RptInformeActaEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptInformePlanta.es-ES.resx">
+      <DependentUpon>RptInformePlanta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptInformePlanta.es-US.resx">
+      <DependentUpon>RptInformePlanta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptInformePlanta.resx">
+      <DependentUpon>RptInformePlanta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptResumenEmpresaTipoDispositivo.resx">
+      <DependentUpon>RptResumenEmpresaTipoDispositivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptResumenRevision.resx">
+      <DependentUpon>RptResumenRevision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptRevisionDispositivo.resx">
+      <DependentUpon>RptRevisionDispositivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptRevisionesFacturablesInstalacion.resx">
+      <DependentUpon>RptRevisionesFacturablesInstalacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptFacturableEmpresaInstalacion.resx">
+      <DependentUpon>RptFacturableEmpresaInstalacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptRevisionesFacturablesTipoDispositivo.resx">
+      <DependentUpon>RptRevisionesFacturablesTipoDispositivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptRevisionesInstalacion.resx">
+      <DependentUpon>RptRevisionesInstalacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptCambiosInstalacion.resx">
+      <DependentUpon>RptCambiosInstalacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptBajasInstalacion.resx">
+      <DependentUpon>RptBajasInstalacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptRevisionesTipoDispositivo.resx">
+      <DependentUpon>RptRevisionesTipoDispositivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptRevisionFormulario.resx">
+      <DependentUpon>RptRevisionFormulario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptTipoPlantilla.resx">
+      <DependentUpon>RptTipoPlantilla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptResumenEmpresaInstalacion.resx">
+      <DependentUpon>RptResumenEmpresaInstalacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptPrograma.resx">
+      <DependentUpon>RptPrograma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptPrograma2.resx">
+      <DependentUpon>RptPrograma2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptTipoPlantillaChart.resx">
+      <DependentUpon>RptTipoPlantillaChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test1.resx">
+      <DependentUpon>Test1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestingConnection.resx">
+      <DependentUpon>TestingConnection.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="imagenes\9001_200.jpg" />
+    <Content Include="imagenes\9001_50.jpg" />
+    <Content Include="imagenes\lainsa-sci.jpg" />
+    <Content Include="imagenes\sci_color_200.jpg" />
+    <Content Include="imagenes\sci_color_50.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LainsaSciModelo\LainsaSciModelo.csproj">
+      <Project>{C3350223-7A75-4161-A2AC-07A4F54C5A6C}</Project>
+      <Name>LainsaSciModelo</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

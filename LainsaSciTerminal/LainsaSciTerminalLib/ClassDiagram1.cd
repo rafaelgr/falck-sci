@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LainsaTerminalLib.CntSciTerminal" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CUioABVAAIJgAQKECAgABkEAArEAIIAgBGBQQJAYAAA=</HashCode>
+      <FileName>CntSciTerminal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaTerminalLib.FileName" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA=</HashCode>
+      <FileName>CntSciTerminal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaTerminalLib.TDatoRevision" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAJAgAACAAAACAAAAAgAAEAAAABAAAAAQAAAAEAAQ=</HashCode>
+      <FileName>TDatoRevision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaTerminalLib.TDispositivo" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAADAAYAICACACAgAAAgAAAAIAkAACBJAwBAQAMAQw=</HashCode>
+      <FileName>TDispositivo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaTerminalLib.TEmpresa" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAgAAAAAAAAAACAAAAAgAAAAA=</HashCode>
+      <FileName>TEmpresa.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaTerminalLib.TGrupoTrabajo" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAACAAAAAgCAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TGrupoTrabajo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaTerminalLib.TIncidencia" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CCCAIAggACQQAAAEAAgAAEAIACBgAAIAJAECAAABoAA=</HashCode>
+      <FileName>TIncidencia.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaTerminalLib.TInstalacion" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACCAAAAggAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TInstalacion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaTerminalLib.TModeloDispositivo" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAICAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TModeloDispositivo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaTerminalLib.TPrograma" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AKAACAAgIACAAAAAAgAAAEIACABAAAwAAAAEAACAAAg=</HashCode>
+      <FileName>TPrograma.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaTerminalLib.TRevision" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AJAiCEASIABAAgAAAgAAAAMAAABBAAQEZA0EBCQNAAg=</HashCode>
+      <FileName>TRevision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaTerminalLib.TSustitucion" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAgKUgAISBAAI0AAACIAEBAAABBAAAAAQAAAAAAAAk=</HashCode>
+      <FileName>TSustitucion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaTerminalLib.TTipoAnomalia" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAACAAAAAgAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>TTipoAnomalia.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaTerminalLib.TTipoDispositivo" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgCAAAAACAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TTipoDispositivo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaTerminalLib.TUsuario" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAgAAAAMAAAAACAAAQAgAAEEA=</HashCode>
+      <FileName>TUsuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaTerminalLib.TEstado" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIEAAAAAACCAAAQiAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>TEstado.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaTerminalLib.TPrioridad" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgCAAAAAgAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>TPrioridad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaTerminalLib.TResponsable" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAACAAgBAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TResponsable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaTerminalLib.TIncidenciaEvolucion" Collapsed="true">
+    <Position X="9.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAgAAAAAABAAAAAAAUIEAABgAAAAIAABAAAAAQA=</HashCode>
+      <FileName>TIncidenciaEvolucion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

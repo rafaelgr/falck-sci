@@ -1,0 +1,43 @@
+﻿body {
+}
+.txtTitulo
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #003B80;
+	border-bottom-style: solid;
+	border-bottom-width: thin;
+	border-bottom-color: #004184;
+}
+.txtNormal
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+.txtNormalGrande
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+.txtNormalRojo
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FF0000;
+}
+.txtData
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #000000;
+	background-color: #EAFFFF;
+	padding:10px;
+}
+.txtDataRojo
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #FF0000;
+	background-color: #EAFFFF;
+	padding: 10px;
+}

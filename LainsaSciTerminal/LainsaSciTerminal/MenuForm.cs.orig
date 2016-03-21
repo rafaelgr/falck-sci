@@ -1,0 +1,54 @@
+﻿using System;
+using System.Linq;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+
+namespace LainsaSciTerminal
+{
+    public partial class MenuForm : Form
+    {
+        public MenuForm()
+        {
+            InitializeComponent();
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void mnuProgramaciones_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            ProgramacionesGrid prgGrid = new ProgramacionesGrid();
+            prgGrid.Show();
+            this.Close();
+        }
+
+        private void mnuSalir_Click(object sender, EventArgs e)
+        {
+            LoginForm frmLogin = new LoginForm();
+            frmLogin.Show();
+            this.Close();
+        }
+
+        private void mnuConsulta_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            CodBarrasForm frmCodBarras = new CodBarrasForm();
+            frmCodBarras.Show();
+            this.Close();
+        }
+<<<<<<< HEAD
+
+        private void menuItem5_Click(object sender, EventArgs e)
+        {
+            ProgramasForm progfrm = new ProgramasForm();
+            progfrm.Show();
+        }
+
+=======
+        
+>>>>>>> c893a9f37cd12052373d77b05c5053a9a6334005
+    }
+}

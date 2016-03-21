@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LainsaSciModelo.CntAutenticacion" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAIAAAAAQIAAAAAA=</HashCode>
+      <FileName>CntAutenticacion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaSciModelo.PermissionView">
+    <Position X="0.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQMAAAACAAAAQAAAAUAAQQBAAFEEAQAQBAAAAAAAA=</HashCode>
+      <FileName>PermisssionView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaSciModelo.CopyOfCntAutenticacion" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAIAAAAAQAAAAAAA=</HashCode>
+      <FileName>CntAutenticacion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaSciModelo.ErrorControl">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAwAAACEAAACAAAAAgAAAACAAA=</HashCode>
+      <FileName>ErrorControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaSciModelo.DireccionView">
+    <Position X="2.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAACAAAAAAAQAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>DireccionView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaSciModelo.Timbre">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACABBAAgAAQAAAAAAAAAAAAAAAAAAACAAAAAgAAAA=</HashCode>
+      <FileName>Timbre.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaSciModelo.SalvaProgramacion">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AKACAAAgAAAAAAAAAgAAAAIAAAAAAAAEAAAABAAAAAA=</HashCode>
+      <FileName>SalvaProgramacion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

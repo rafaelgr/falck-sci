@@ -1,0 +1,4 @@
+ALTER TABLE `incidencia` CHANGE COLUMN `fecha` `fecha_apertura` datetime NOT NULL
+;
+-- add column for field _fechaCierre
+ALTER TABLE `incidencia` ADD COLUMN `fecha_cierre` datetime NULL

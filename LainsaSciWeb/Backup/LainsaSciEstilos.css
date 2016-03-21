@@ -1,0 +1,129 @@
+﻿body 
+{
+}
+.celda
+{
+	vertical-align: top;
+}
+.alineadoDerecha
+{
+	text-align:right;
+}
+.marcoPlantilla
+{
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-color: #000080;
+	border-bottom-color: #000080;
+	top: 10px;
+	bottom: 10px;
+}
+.tituloMain
+{
+    background-image: none;
+    background-repeat: repeat;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #000000;
+    padding: 2px;
+}
+.tituloError
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    background-color: #FFEFDF;
+    color: #000000;
+    padding: 2px;
+}
+.errorLabel
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #0000FF;
+	vertical-align: top;
+}
+.areaFooter
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    background-color: #FFEFDF;
+    color: #000000;
+    padding: 2px;
+}
+.areaCampo
+{
+    border: 1px solid #666699;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    padding:10px;
+}
+.areaMain
+{
+    width: 100%;
+    height: 700px;
+    background-color: #FFFCF9;
+}
+.normalText
+{
+	font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+.normalTextRed
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FF0000;
+}
+.buttonsFormat
+{
+	text-align: right;
+	background-color: #C6C6C6;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	padding: 2px;
+}
+.fondoGrande
+{
+	background-image: url('images/fondoG.png');
+	background-repeat: repeat;
+}
+.frameConMarco
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #808080;
+	border: 1px solid #808080;
+	padding: 2px;
+}
+.conMargen
+{
+    padding: 3px;
+    margin: 3px;
+}
+.tituloWindow
+{
+    padding: 5px;
+    margin: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    background-color: #666666;
+    color: #FFFFFF;
+}
+.marcoWindow
+{
+    border-style: solid;
+    border-width: 1px;
+}
+#contenido
+{
+    padding: 5px;
+    min-width: 515px;
+}
+ .FondoAplicacion
+{
+     background-color: #666; /*shadow color*/ 
+ 
+ }

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LainsaTerminalLib.TUsuario">
+    <Position X="2.75" Y="0.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAgAAAAIAAAAACAAAQAgAAEAA=</HashCode>
+      <FileName>TUsuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaTerminalLib.TPrograma">
+    <Position X="0.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAACAAAIACAAAAAAgAAAEIACABAAAwAAAAEAACAAAg=</HashCode>
+      <FileName>TPrograma.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Usuario" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Revisiones" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="LainsaTerminalLib.TRevision">
+    <Position X="3.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AJAiCEASIABAAgAAAgAAAAIAAABAAAQEZAkEBCQJAAg=</HashCode>
+      <FileName>TRevision.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Usuario" />
+      <Property Name="Dispositivo" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="DatosRevision" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="LainsaTerminalLib.TDispositivo">
+    <Position X="5.5" Y="0.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABAAAAAQAACAAACAgAAAgAAAAAAEAAAABAAAAAAAAAA=</HashCode>
+      <FileName>TDispositivo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaTerminalLib.TDatoRevision">
+    <Position X="6.5" Y="3.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>CAAAJAgAACAAAAAAAAAAAAAEAAAABAAAAAQAAAAEAAQ=</HashCode>
+      <FileName>TDatoRevision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaTerminalLib.CntSciTerminal">
+    <Position X="0.5" Y="5.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAgIAAAAAIAAAQAEAAAAAkAAAhEAIIAgAGBQQAAAAAA=</HashCode>
+      <FileName>CntSciTerminal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

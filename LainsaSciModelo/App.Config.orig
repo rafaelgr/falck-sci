@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <connectionStrings>
+<<<<<<< HEAD
+    <add name="DosimetriaCTX" 
+         connectionString="server=localhost;user id=root;password=aritel;persist security info=True;database=dosimetria" 
+         providerName="MySql.Data.MySqlClient" />
+    <!--<add name="DosimetriaCTX" connectionString="server=localhost;user id=root;password=aritel;persist security info=True;database=dosimetria" providerName="MySql.Data.MySqlClient" />-->
+=======
+    <!--<add name="DosimetriaCTX" 
+         connectionString="server=localhost;user id=root;password=aritel;persist security info=True;database=dosimetria_beta" 
+         providerName="MySql.Data.MySqlClient" />-->
+>>>>>>> 5c89109bf7ec9227ad905dbe15a50d2cdc23eb86
+    <!--<add name="DosimetriaCTX" connectionString="server=82.165.145.76;user id=dosimetriaroot;password=aritel;persist security info=True;database=dosimetria" providerName="MySql.Data.MySqlClient" />-->
+    <!--<add name="DosimetriaCTX" connectionString="server=localhost;user id=root;password=aritel;persist security info=True;database=dosimetria" providerName="MySql.Data.MySqlClient" /></connectionStrings>-->
+    <add name="DosimetriaCTX" connectionString="server=localhost;user id=root;password=aritel;persist security info=True;database=dosimetria_beta" providerName="MySql.Data.MySqlClient" />
+  </connectionStrings>
+</configuration>

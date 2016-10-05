@@ -127,8 +127,7 @@ namespace LainsaSciWinWeb
 
         protected void RefreshGrid(bool rebind) {
             RadGrid1.DataSource = usuario.UsuarioEmpresas;
-            if(rebind)
-                RadGrid1.Rebind();
+            if(rebind) RadGrid1.Rebind();
         }
         #region Auxiliary
         protected bool DataOk()
@@ -327,57 +326,6 @@ namespace LainsaSciWinWeb
             }
         }
         #endregion
-        /*
-        protected void rdcEmpresa_ItemsRequested(object sender, RadComboBoxItemsRequestedEventArgs e)
-        {
-            if (e.Text == "") return;
-            RadComboBox combo = (RadComboBox)sender;
-            combo.Items.Clear();
-            foreach (Empresa emp in CntLainsaSci.GetEmpresas(e.Text, usuario, ctx))
-            {
-                combo.Items.Add(new RadComboBoxItem(emp.Nombre, emp.EmpresaId.ToString()));
-            }
-        }
-        
-        protected void rdcEmpresa_SelectedIndexChanged(object sender, RadComboBoxSelectedIndexChangedEventArgs e)
-        {
-            if (rdcEmpresa.SelectedValue != "")
-            {
-               empresa = CntLainsaSci.GetEmpresa(int.Parse(rdcEmpresa.SelectedValue), ctx);
-            rdcInstalacion.Items.Clear();
-            if (empresa != null)
-                foreach (string key in lstEmp[empresa.EmpresaId.ToString()].Value.Keys)
-                {
-                    rdcInstalacion.Items.Add(new RadComboBoxItem(lstEmp[empresa.EmpresaId.ToString()].Value[key], key));
-                }
-            }
-
-        }*/
-        /*
-        protected void rdcInstalacion_ItemsRequested(object sender, RadComboBoxItemsRequestedEventArgs e)
-        {
-            if (e.Text == "") return;
-            RadComboBox combo = (RadComboBox)sender;
-            combo.Items.Clear();
-            foreach (Instalacion ins in CntLainsaSci.GetInstalaciones(e.Text, usuario, ctx))
-            {
-                combo.Items.Add(new RadComboBoxItem(ins.Nombre, ins.InstalacionId.ToString()));
-            }
-        }
-
-        protected void rdcInstalacion_SelectedIndexChanged(object sender, RadComboBoxSelectedIndexChangedEventArgs e)
-        {
-            if (rdcInstalacion.SelectedValue != "")
-            {
-                instalacion = CntLainsaSci.GetInstalacion(int.Parse(rdcInstalacion.SelectedValue), ctx);
-                if (instalacion != null)
-                {
-                    rdcEmpresa.Items.Clear();
-                    rdcEmpresa.Items.Add(new RadComboBoxItem(instalacion.Empresa.Nombre, instalacion.Empresa.EmpresaId.ToString()));
-                    rdcEmpresa.SelectedValue = instalacion.Empresa.EmpresaId.ToString();
-                }
-            }
-        }*/
 
         protected void rdcGrupo_ItemsRequested(object sender, RadComboBoxItemsRequestedEventArgs e)
         {

@@ -120,23 +120,14 @@
   <data name="textBox13.Value" xml:space="preserve">
     <value>Observaciones</value>
   </data>
-  <data name="textBox9.Value" xml:space="preserve">
-    <value>=Empresa</value>
+  <data name="htmlTextBox2.Value" xml:space="preserve">
+    <value>=Preguntas</value>
   </data>
-  <data name="textBox1.Value" xml:space="preserve">
-    <value>Realizado por:</value>
+  <data name="textBox21.Value" xml:space="preserve">
+    <value>=Fabricado</value>
   </data>
-  <data name="textBox2.Value" xml:space="preserve">
-    <value>Fecha revisión:</value>
-  </data>
-  <data name="textBox12.Value" xml:space="preserve">
-    <value>Instalacion</value>
-  </data>
-  <data name="textBox4.Value" xml:space="preserve">
-    <value>Nombre</value>
-  </data>
-  <data name="textBox5.Value" xml:space="preserve">
-    <value>Ubicacion</value>
+  <data name="textBox34.Value" xml:space="preserve">
+    <value>= PageCount</value>
   </data>
   <data name="textBox6.Value" xml:space="preserve">
     <value>Tipo</value>
@@ -144,23 +135,15 @@
   <data name="textBox7b.Value" xml:space="preserve">
     <value>N. Ind.</value>
   </data>
-  <data name="textBox8.Value" xml:space="preserve">
-    <value>Modelo</value>
+  <data name="textBox16.Value" xml:space="preserve">
+    <value>=Nombre</value>
   </data>
-  <data name="textBox10b.Value" xml:space="preserve">
-    <value>F. F.</value>
-  </data>
-  <data name="textBox11b.Value" xml:space="preserve">
-    <value>Quniq.</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="textBox14.Value" xml:space="preserve">
     <value>Resultado</value>
-  </data>
-  <data name="htmlTextBox2.Value" xml:space="preserve">
-    <value>=Preguntas</value>
-  </data>
-  <data name="textBox25.Value" xml:space="preserve">
-    <value>=Plantilla</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox2.Value" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -481,46 +464,65 @@
         SUVORK5CYII=
 </value>
   </data>
-  <data name="textBox15.Value" xml:space="preserve">
-    <value>=Instalacion</value>
+  <data name="textBox11b.Value" xml:space="preserve">
+    <value>Quniq.</value>
   </data>
-  <data name="textBox16.Value" xml:space="preserve">
-    <value>=Nombre</value>
-  </data>
-  <data name="textBox17.Value" xml:space="preserve">
-    <value>=Ubicacion</value>
-  </data>
-  <data name="textBox18.Value" xml:space="preserve">
-    <value>=Tipo</value>
+  <data name="textBox5.Value" xml:space="preserve">
+    <value>Ubicacion</value>
   </data>
   <data name="textBox19.Value" xml:space="preserve">
     <value>=NIndustria</value>
   </data>
-  <data name="textBox20.Value" xml:space="preserve">
-    <value>=Modelo</value>
-  </data>
-  <data name="textBox21.Value" xml:space="preserve">
-    <value>=Fabricado</value>
+  <data name="textBox1.Value" xml:space="preserve">
+    <value>Realizado por:</value>
   </data>
   <data name="textBox22.Value" xml:space="preserve">
     <value>=UltQuinquenal</value>
   </data>
-  <data name="textBox33.Value" xml:space="preserve">
-    <value>= PageNumber</value>
+  <data name="textBox2.Value" xml:space="preserve">
+    <value>Fecha revisión:</value>
   </data>
-  <data name="textBox34.Value" xml:space="preserve">
-    <value>= PageCount</value>
+  <assembly alias="Telerik.Reporting" name="Telerik.Reporting, Version=7.1.13.612, Culture=neutral, PublicKeyToken=a9d7983dfcc261be" />
+  <data name="$this.SnapGridSize" type="Telerik.Reporting.Drawing.Unit, Telerik.Reporting">
+    <value>0.1in</value>
+  </data>
+  <data name="textBox17.Value" xml:space="preserve">
+    <value>=Ubicacion</value>
+  </data>
+  <data name="textBox12.Value" xml:space="preserve">
+    <value>Instalacion</value>
+  </data>
+  <data name="$this.ShowSnapGrid" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="textBox35.Value" xml:space="preserve">
     <value>/</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.ShowSnapGrid" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.SnapGridSize" type="Telerik.Reporting.Drawing.Unit, Telerik.Reporting, Version=7.2.14.127, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
-    <value>0.1in</value>
-  </metadata>
+  <data name="textBox25.Value" xml:space="preserve">
+    <value>=Plantilla</value>
+  </data>
+  <data name="textBox9.Value" xml:space="preserve">
+    <value>=Empresa</value>
+  </data>
+  <data name="textBox33.Value" xml:space="preserve">
+    <value>= PageNumber</value>
+  </data>
+  <data name="textBox4.Value" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="textBox18.Value" xml:space="preserve">
+    <value>=Tipo</value>
+  </data>
+  <data name="textBox15.Value" xml:space="preserve">
+    <value>=Instalacion</value>
+  </data>
+  <data name="textBox20.Value" xml:space="preserve">
+    <value>=Modelo</value>
+  </data>
+  <data name="textBox8.Value" xml:space="preserve">
+    <value>Modelo</value>
+  </data>
+  <data name="textBox10b.Value" xml:space="preserve">
+    <value>F. F.</value>
+  </data>
 </root>

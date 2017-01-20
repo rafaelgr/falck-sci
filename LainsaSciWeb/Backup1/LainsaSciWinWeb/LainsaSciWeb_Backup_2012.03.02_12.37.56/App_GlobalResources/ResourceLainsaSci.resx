@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DeleteRecord" xml:space="preserve">
+    <value>Borrar registro</value>
+  </data>
+  <data name="DeleteRecordFail" xml:space="preserve">
+    <value>Falló la eliminación del registro, posiblemente hay registros relacionados que impiden su borrado.</value>
+  </data>
+  <data name="DeleteRecordQuestion" xml:space="preserve">
+    <value>¿Desea realmente borrar el registro?</value>
+  </data>
+  <data name="LegalNote" xml:space="preserve">
+    <value>&lt;b&gt;Bienvenido / bienvenida:&lt;/b&gt; &lt;p&gt;Recuerde sus obligaciones respecto del cumplimiento de la &lt;b&gt;LOPD&lt;/b&gt;.&lt;br/&gt;Si no las conoce, salga de la aplicación y hable con su Responsable de Fichero. &lt;/p&gt;</value>
+    <comment>Legal message Usuarios see when they login.</comment>
+  </data>
+  <data name="LoginAndPasswordNeeded" xml:space="preserve">
+    <value>Se necesita un login y contraseña</value>
+  </data>
+  <data name="LoginFail" xml:space="preserve">
+    <value>Usuario o contraseña incorrectos</value>
+  </data>
+  <data name="LoginNeeded" xml:space="preserve">
+    <value>Se necesita un login</value>
+  </data>
+  <data name="NombreNeeded" xml:space="preserve">
+    <value>Se necesita un nombre</value>
+  </data>
+  <data name="NoPermissionsAssigned" xml:space="preserve">
+    <value>NO se han asignado permisos para este proceso al grupo de este usuario.</value>
+  </data>
+  <data name="ParentProcessNeeded" xml:space="preserve">
+    <value>Se necesita un proceso padre</value>
+  </data>
+  <data name="PasswordDoesntMatch" xml:space="preserve">
+    <value>Las contraseñas no coinciden</value>
+  </data>
+  <data name="UsuarioGroupNeeded" xml:space="preserve">
+    <value>Se necesita un grupo de usuario</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Aviso</value>
+  </data>
+  <data name="Primary" xml:space="preserve">
+    <value>Primario</value>
+    <comment>Marca una dirección, teléfono o email como primario.</comment>
+  </data>
+  <data name="Secondary" xml:space="preserve">
+    <value>Secundario</value>
+    <comment>Marca una dirección, teléfono o email como secundaria.</comment>
+  </data>
+  <data name="Female" xml:space="preserve">
+    <value>Femenino</value>
+    <comment>Género femenino</comment>
+  </data>
+  <data name="Male" xml:space="preserve">
+    <value>Masculino</value>
+    <comment>Género masculino</comment>
+  </data>
+  <data name="DirectionWithoutOwner" xml:space="preserve">
+    <value>No se pueden mostrar direcciones sin propietario</value>
+  </data>
+  <data name="EmailWithoutOwner" xml:space="preserve">
+    <value>No se pueden mostrar correos sin propietario</value>
+  </data>
+  <data name="TelephoneWithoutOwner" xml:space="preserve">
+    <value>No se pueden mostrar teléfonos sin propietarios</value>
+  </data>
+  <data name="NecTipoDispositivo" xml:space="preserve">
+    <value>Se necesita un tipo de dispositivo</value>
+  </data>
+  <data name="NumeroPeriodosNoCero" xml:space="preserve">
+    <value>El número de periodos no puede ser cero</value>
+  </data>
+  <data name="NcAgenteExtintor" xml:space="preserve">
+    <value>Se necesita un agente extintor</value>
+  </data>
+  <data name="NcFabricante" xml:space="preserve">
+    <value>Se necesita un fabricante</value>
+  </data>
+  <data name="NcFechaFabricacion" xml:space="preserve">
+    <value>Se necesita una fecha de fabricación</value>
+  </data>
+  <data name="NcModelo" xml:space="preserve">
+    <value>Se necesita un modelo</value>
+  </data>
+  <data name="NcTipoDispositivo" xml:space="preserve">
+    <value>Se necesita un tipo de dispositivo</value>
+  </data>
+  <data name="RevisionMenosPlanificacion" xml:space="preserve">
+    <value>La fecha de revisión no debe ser inferior a la planificada</value>
+  </data>
+  <data name="CaducidadProxima" xml:space="preserve">
+    <value>Esta revisión es la última antes de que caduque el dispositivo el {0:dd/MM/yyyy}. Si desea dar de baja ahora un dispositivo confirme la fecha haciendo clic en "OK".</value>
+  </data>
+  <data name="NeededCorrectDateTime" xml:space="preserve">
+    <value>Se necesita una fecha correcta</value>
+  </data>
+  <data name="NcEstado" xml:space="preserve">
+    <value>Se necesita un estado</value>
+  </data>
+  <data name="NcFuncion" xml:space="preserve">
+    <value>Se necesita una función</value>
+  </data>
+</root>

@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LainsaSciInformes.RptPrograma">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QCAAAAQgAQAAABCAEAAAAABCIAAAAAAgEAAIEABAAIA=</HashCode>
+      <FileName>RptPrograma.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaSciInformes.RptPrograma2">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QCAAAAYgAQAAABAAEACAAABCogAAAAAgEAAIEABAAIA=</HashCode>
+      <FileName>RptPrograma2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaSciInformes.RevView">
+    <Position X="10.75" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>IZQCACAQIQCAAGEAoARACAAUQgCgEAYIoQBUSAGEUkA=</HashCode>
+      <FileName>RevViewCab.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaSciInformes.ResAnoView">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AnoView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaSciInformes.ResTipoPlantillaView">
+    <Position X="3.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAABAAQAAAAACAAAAAgAAAAAAAAAAAAAAEAAAABAAQ=</HashCode>
+      <FileName>ResTipo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaSciInformes.CambioView">
+    <Position X="5.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQEAACEBAAAgAAAAAAEAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>ResCambioView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaSciInformes.ResEmpresaInstalacionView">
+    <Position X="1.25" Y="1.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AxCgCAAQAAiAwCAAgEQgAAAECkYhAAhCIQAAAAMAoAQ=</HashCode>
+      <FileName>ResEmpresaInstalacion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaSciInformes.BajaView">
+    <Position X="5.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAgAAAAAIAAAACEAAAABAAAAAA=</HashCode>
+      <FileName>BajaView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaSciInformes.RevisionView">
+    <Position X="13.5" Y="0.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>gIACAAAAAQAAAAEBAgAAAEIAAABAAAQEQCiEBIAogAE=</HashCode>
+      <FileName>RevisionView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaSciInformes.NombreInforme">
+    <Position X="7.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NombreInforme.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaSciInformes.Periodo">
+    <Position X="9" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAgAAAAAAACEAAAAhAAA=</HashCode>
+      <FileName>Periodo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaSciInformes.PruebaHidrostatica">
+    <Position X="3.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAIQAAAhCIAAocCQWIBAAFgAAQAAAgMAgAAIAIAAE=</HashCode>
+      <FileName>PruebaHidrostatica.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaSciInformes.InformePlanta" Collapsed="true">
+    <Position X="11.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAABAAQIACAACCAgAAggICAAAAAgAAgAAgAIAAIAAQ=</HashCode>
+      <FileName>InformePlanta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LainsaSciInformes.ConsultaRevision">
+    <Position X="13.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AJACDAASAACAAoAAggCAAAIAAAAAIAAEACgABIAIAgw=</HashCode>
+      <FileName>ConsultaRevision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

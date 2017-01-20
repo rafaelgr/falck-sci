@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="LainsaSciWinWeb">
+</Property><Property Name="Archivo de la solución" Value="C:\ProyectosNet\lainsa_sci\LainsaSciWeb\LainsaSciWinWeb.sln">
+</Property><Property Name="Date" Value="viernes, 24 de febrero de 2012">
+</Property><Property Name="Time" Value="11:14:30">
+</Property></Properties><Event ErrorLevel="0" Project="LainsaSciTerminalLib" Source="..\LainsaSciTerminal\LainsaTerminalLib\LainsaSciTerminalLib.csproj" Description="Proyecto convertido correctamente">
+</Event><Event ErrorLevel="3" Project="LainsaSciTerminalLib" Source="..\LainsaSciTerminal\LainsaTerminalLib\LainsaSciTerminalLib.csproj" Description="Converted">
+</Event><Event ErrorLevel="2" Project="" Source="..\LainsaSciTerminal\LainsaTerminalLib\LainsaSciTerminalLib.csproj" Description="No se puede abrir el archivo de proyecto 'C:\ProyectosNet\lainsa_sci\LainsaSciTerminal\LainsaTerminalLib\LainsaSciTerminalLib.csproj'.&#xA;&#xA;El tipo de proyecto no es compatible con esta instalación.">
+</Event></UpgradeLog>

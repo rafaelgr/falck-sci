@@ -1,0 +1,218 @@
+﻿/*
+GridForm.js
+Author: Rafael Garcia
+Copyright: Ariadna Software S.L.
+-------------------------------------------------------------------------------------
+First update: 2011-07-28
+(*) GetRadWindow
+it takes the current window
+(*) openOutSide(name)
+it opens the ID = name window, outside the current one.
+-------------------------------------------------------------------------------------
+*/
+// gup stands from Get Url Parameters
+function gup(name)
+{
+    name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+    var regexS = "[\\?&]" + name + "=([^&#]*)";
+    var regex = new RegExp(regexS);
+    var results = regex.exec(window.location.href);
+    if (results == null)
+        return "";
+    else
+        return results[1];
+}
+
+//function refreshGrid2(arg, frame) {
+//    // search for the iframe
+//    var iframe = document.getElementById(frame);
+//    iframe.contentWindow.refreshGrid(arg);
+//}
+
+function getUrlEmpresaForm()
+{
+    return window.location.protocol + "://" + window.location.host + "/" + 'EmpresaForm.aspx';
+}
+
+function GetRadWindow()
+{
+    var oWindow = null;
+    if (window.radWindow) oWindow = window.radWindow;
+    else if (window.frameElement.radWindow) oWindow = window.frameElement.radWindow;
+    return oWindow;
+}
+
+function openOutSide(url, name)
+{
+    //alert("openOutSide");
+    if (gup("InFrame") == "S" || gup("InTab") == "S")
+    {
+        parent.openOutSide(url, name);
+    }
+    else
+    {
+        var oWnd = GetRadWindow();
+        if (oWnd)
+            oWnd.BrowserWindow.openWindow(url, name);
+        else
+            alert("openOutSide(name): no current window");
+    }
+}
+
+function closeWindow()
+{
+    if (gup("InTab") == "S"){
+        parent.closeWindow();
+    }
+    else
+    {
+        var oWnd = GetRadWindow();
+        //see: CntWinWeb.VisibleOnPageLoadAllWindows in code behind
+        oWnd.close();
+    }
+}
+//function closeWindow(id)
+//{
+//    var oManager = GetRadWindowManager();
+//    if (oManager)
+//        var oWnd = oManager.GetWindowByName(id);
+//    alert(id);
+//    oWnd.close();
+//}
+
+function closeWindowNewRecord(caller, id) {
+    if (gup("Intab" == "S")) {
+        parent.closeWindowNewRecord(caller, id);
+    } else {
+        var oWnd = GetRadWindow();
+        if (oWnd)
+            oWnd.BrowserWindow.callNewRecordInGrid(caller, id);
+        else
+            alert("closeWindowNewRecord(caller, id): no current window");
+        oWnd.close();
+    }
+}
+
+function closeWindowRefreshGrid(caller, arg)
+{
+    //alert("Intab: " + gup("InTab") + " caller: " + caller);
+    if (caller == "EmpresaTab") caller = "EmpresaGrid";
+    if (caller == "InstalacionTab") caller = "InstalacionGrid";
+    if (gup("InTab") == "S")
+    {
+        parent.closeWindowRefreshGrid(caller, arg);
+    }
+    else
+    {
+        var oWnd = GetRadWindow();
+        if (oWnd)
+            oWnd.BrowserWindow.callRefreshGrid(caller, arg);
+        else
+        {
+            alert("closeWindowRefreshGrid(" + caller + "," + arg + "): no current window");
+        }
+        oWnd.close();
+    }
+}
+
+function closeWindowRefreshGrid2(caller, arg, frame)
+{
+    if (gup("InTab") == "S")
+    {
+        parent.closeWindowRefreshGrid2(caller, arg, frame);
+    }
+    else
+    {
+        var oWnd = GetRadWindow();
+        if (oWnd)
+            oWnd.BrowserWindow.callRefreshGrid2(caller, arg, frame);
+        else
+        {
+            alert("closeWindowRefreshGrid2(" + caller + "," + arg + "," + frame + "): no current window");
+        }
+        oWnd.close();
+    }
+}
+
+function callShowError(message)
+{
+    alert("callShowError");
+    var oWnd = GetRadWindow();
+    if (oWnd)
+        oWnd.BrowserWindow.showError(message);
+    else
+        alert("callShowError(message): no current window");
+}
+
+function returnValuesGeneral(caller, values)
+{
+    var oWnd = GetRadWindow();
+    if (oWnd)
+    {
+        oWnd.BrowserWindow.callLoadValues(caller, values);
+        oWnd.close();
+    }
+    else
+        alert("returnValuesGeneral(caller, values): no current window");
+}
+
+function returnValues2(v1, v2)
+{
+    var values = new Array();
+    values[0] = v1;
+    values[1] = v2;
+    returnValuesGeneral(gup("Caller"), values);
+}
+function resizeWindow()
+{
+    var oWnd = GetRadWindow();
+    if (oWnd) oWnd.autoSize();
+}
+function resizeIframe(id)
+{
+    var iframe = document.getElementById(id);
+    iframe.height = iframe.document.body.scrollHeight + 2;
+}
+//-- Search area
+function searchGrupoUsuario(caller)
+{
+    var oWnd = GetRadWindow();
+    if (oWnd)
+        oWnd.BrowserWindow.callGrupoUsuarioGrid(caller);
+    else
+        alert("searchGrupoUsuario(caller): no current window");
+}
+
+function searchProceso(caller)
+{
+    var oWnd = GetRadWindow();
+    if (oWnd)
+        oWnd.BrowserWindow.callProcesoGrid(caller);
+    else
+        alert("searchProceso(caller): no current window");
+}
+
+function searchEmpresa(caller) {
+<<<<<<< HEAD
+    var oWnd = GetRadWindow();
+
+    parent.parent.window.callEmpresaGrid(caller);
+//    if (oWnd)
+//        oWnd.BrowserWindow.callEmpresaGrid(caller);
+//    else
+//        alert("searchEmpresa("+caller+"): no current window");
+=======
+    if (gup("InTab") == "S") {
+        if (caller = "InstalacionForm") caller = "InstalacionTab";
+        parent.searchEmpresa(caller);
+    } else {
+        var oWnd = GetRadWindow();
+        if (oWnd)
+            oWnd.BrowserWindow.callEmpresaGrid(caller);
+        else
+            alert("searchProceso(caller): no current window");
+    }
+>>>>>>> af333b693951c967a7244003d278857f37146b49
+}
+//-- End search area
+

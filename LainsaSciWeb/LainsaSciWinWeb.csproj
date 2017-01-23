@@ -1144,6 +1144,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FALCK-DBM.pubxml" />
     <None Include="Properties\PublishProfiles\FALCK-SCI.pubxml" />
   </ItemGroup>
   <ItemGroup>
@@ -1260,7 +1261,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties UseAjaxifiedTemplates="True" UseJQuerySupport="True" />
+      <UserProperties UseJQuerySupport="True" UseAjaxifiedTemplates="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

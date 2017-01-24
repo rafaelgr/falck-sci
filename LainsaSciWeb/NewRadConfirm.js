@@ -1,5 +1,5 @@
 ﻿//Replace old radconfirm with a changed version.   
-var oldConfirm = radconfirm;
+// var oldConfirm = radconfirm; // Este estaba
 
 //TELERIK
 //window.radconfirm = function(text, mozEvent)
@@ -41,7 +41,7 @@ window.radconfirm = function (text, mozEvent, oWidth, oHeight, callerObj, oTitle
         //TELERIK
         //oldConfirm(text, callBackFn, 300, 100, null, null);       
         //We will need to modify the oldconfirm as well                
-        oldConfirm(text, callBackFn, oWidth, oHeight, callerObj, oTitle);
+        //oldConfirm(text, callBackFn, oWidth, oHeight, callerObj, oTitle); // Este si estaba
     }
     return false;
 } 

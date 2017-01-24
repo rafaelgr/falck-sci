@@ -482,8 +482,9 @@
   <data name="textBox2.Value" xml:space="preserve">
     <value>Fecha revisión:</value>
   </data>
-  <data name="textBox9.Value" xml:space="preserve">
-    <value>=Empresa</value>
+  <assembly alias="Telerik.Reporting" name="Telerik.Reporting, Version=7.2.13.1016, Culture=neutral, PublicKeyToken=a9d7983dfcc261be" />
+  <data name="$this.SnapGridSize" type="Telerik.Reporting.Drawing.Unit, Telerik.Reporting">
+    <value>0.1in</value>
   </data>
   <data name="textBox17.Value" xml:space="preserve">
     <value>=Ubicacion</value>
@@ -500,9 +501,8 @@
   <data name="textBox25.Value" xml:space="preserve">
     <value>=Plantilla</value>
   </data>
-  <assembly alias="Telerik.Reporting" name="Telerik.Reporting, Version=6.2.13.110, Culture=neutral, PublicKeyToken=a9d7983dfcc261be" />
-  <data name="$this.SnapGridSize" type="Telerik.Reporting.Drawing.Unit, Telerik.Reporting">
-    <value>0.1in</value>
+  <data name="textBox9.Value" xml:space="preserve">
+    <value>=Empresa</value>
   </data>
   <data name="textBox33.Value" xml:space="preserve">
     <value>= PageNumber</value>

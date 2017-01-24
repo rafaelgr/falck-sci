@@ -117,6 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="sqlDataSource1.SelectCommand" xml:space="preserve">
+    <value>SELECT        dispositivo.fecha_caducidad, dispositivo.nombre, tipo_dispositivo.nombre AS tipo_dispositivo, instalacion.nombre AS instalacion, dispositivo.numero_industria, 
+                         dispositivo.posicion, empresa.nombre AS cliente, dispositivo.dispositivo_id, dispositivo.fecha_fabricacion, dispositivo.fecha_baja, dispositivo.caducado
+FROM            dispositivo INNER JOIN
+                         tipo_dispositivo ON dispositivo.tipo_id = tipo_dispositivo.tipo_id INNER JOIN
+                         instalacion ON dispositivo.instalacion_id = instalacion.instalacion_id INNER JOIN
+                         empresa ON instalacion.empresa_id = empresa.empresa_id
+WHERE        (dispositivo.dispositivo_id IN (@Parameter1))</value>
+  </data>
+  <assembly alias="Telerik.Reporting" name="Telerik.Reporting, Version=7.2.13.1016, Culture=neutral, PublicKeyToken=a9d7983dfcc261be" />
+  <data name="$this.SnapGridSize" type="Telerik.Reporting.Drawing.Unit, Telerik.Reporting">
+    <value>0.1in</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox1.Value" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3333,41 +3346,28 @@
         FFABRRRQAUUUUAFFFFABRRRQB//Z
 </value>
   </data>
-  <assembly alias="Telerik.Reporting" name="Telerik.Reporting, Version=6.2.13.110, Culture=neutral, PublicKeyToken=a9d7983dfcc261be" />
-  <data name="$this.SnapGridSize" type="Telerik.Reporting.Drawing.Unit, Telerik.Reporting">
-    <value>0.1in</value>
-  </data>
-  <data name="sqlDataSource1.SelectCommand" xml:space="preserve">
-    <value>SELECT        dispositivo.fecha_caducidad, dispositivo.nombre, tipo_dispositivo.nombre AS tipo_dispositivo, instalacion.nombre AS instalacion, dispositivo.numero_industria, 
-                         dispositivo.posicion, empresa.nombre AS cliente, dispositivo.dispositivo_id, dispositivo.fecha_fabricacion, dispositivo.fecha_baja, dispositivo.caducado
-FROM            dispositivo INNER JOIN
-                         tipo_dispositivo ON dispositivo.tipo_id = tipo_dispositivo.tipo_id INNER JOIN
-                         instalacion ON dispositivo.instalacion_id = instalacion.instalacion_id INNER JOIN
-                         empresa ON instalacion.empresa_id = empresa.empresa_id
-WHERE        (dispositivo.dispositivo_id IN (@Parameter1))</value>
-  </data>
   <data name="sqlDataSource1.DefaultValues" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFdUZWxlcmlrLlJlcG9ydGluZywgVmVyc2lvbj02LjIuMTMuMTEw
-        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWE5ZDc5ODNkZmNjMjYxYmUFAQAAADJUZWxl
-        cmlrLlJlcG9ydGluZy5TcWxEYXRhU291cmNlUGFyYW1ldGVyQ29sbGVjdGlvbgEAAAASQ29sbGVjdGlv
-        bmAxK2l0ZW1zA6YBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tUZWxlcmlrLlJlcG9y
-        dGluZy5TcWxEYXRhU291cmNlUGFyYW1ldGVyLCBUZWxlcmlrLlJlcG9ydGluZywgVmVyc2lvbj02LjIu
-        MTMuMTEwLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWE5ZDc5ODNkZmNjMjYxYmVdXQIA
-        AAAJAwAAAAQDAAAApgFTeXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5MaXN0YDFbW1RlbGVyaWsuUmVw
-        b3J0aW5nLlNxbERhdGFTb3VyY2VQYXJhbWV0ZXIsIFRlbGVyaWsuUmVwb3J0aW5nLCBWZXJzaW9uPTYu
-        Mi4xMy4xMTAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49YTlkNzk4M2RmY2MyNjFiZV1d
-        AwAAAAZfaXRlbXMFX3NpemUIX3ZlcnNpb24EAAAqVGVsZXJpay5SZXBvcnRpbmcuU3FsRGF0YVNvdXJj
-        ZVBhcmFtZXRlcltdAgAAAAgICQQAAAABAAAABQAAAAcEAAAAAAEAAAAEAAAABChUZWxlcmlrLlJlcG9y
-        dGluZy5TcWxEYXRhU291cmNlUGFyYW1ldGVyAgAAAAkFAAAADQMMBgAAAE5TeXN0ZW0uRGF0YSwgVmVy
-        c2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUw
-        ODkMBwAAAElTeXN0ZW0sIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlU
-        b2tlbj1iNzdhNWM1NjE5MzRlMDg5BQUAAAAoVGVsZXJpay5SZXBvcnRpbmcuU3FsRGF0YVNvdXJjZVBh
-        cmFtZXRlcgQAAAAGZGJUeXBlGERhdGFTb3VyY2VQYXJhbWV0ZXIrbmFtZRlEYXRhU291cmNlUGFyYW1l
-        dGVyK3ZhbHVlI0RhdGFTb3VyY2VQYXJhbWV0ZXIrUHJvcGVydHlDaGFuZ2VkBAECBBJTeXN0ZW0uRGF0
-        YS5EYlR5cGUGAAAAMVN5c3RlbS5Db21wb25lbnRNb2RlbC5Qcm9wZXJ0eUNoYW5nZWRFdmVudEhhbmRs
-        ZXIHAAAAAgAAAAX4////ElN5c3RlbS5EYXRhLkRiVHlwZQEAAAAHdmFsdWVfXwAIBgAAABAAAAAGCQAA
-        AAtAUGFyYW1ldGVyMQoKCw==
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFhUZWxlcmlrLlJlcG9ydGluZywgVmVyc2lvbj03LjIuMTMuMTAx
+        NiwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1hOWQ3OTgzZGZjYzI2MWJlBQEAAAAyVGVs
+        ZXJpay5SZXBvcnRpbmcuU3FsRGF0YVNvdXJjZVBhcmFtZXRlckNvbGxlY3Rpb24BAAAAEkNvbGxlY3Rp
+        b25gMStpdGVtcwOnAVN5c3RlbS5Db2xsZWN0aW9ucy5HZW5lcmljLkxpc3RgMVtbVGVsZXJpay5SZXBv
+        cnRpbmcuU3FsRGF0YVNvdXJjZVBhcmFtZXRlciwgVGVsZXJpay5SZXBvcnRpbmcsIFZlcnNpb249Ny4y
+        LjEzLjEwMTYsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49YTlkNzk4M2RmY2MyNjFiZV1d
+        AgAAAAkDAAAABAMAAACnAVN5c3RlbS5Db2xsZWN0aW9ucy5HZW5lcmljLkxpc3RgMVtbVGVsZXJpay5S
+        ZXBvcnRpbmcuU3FsRGF0YVNvdXJjZVBhcmFtZXRlciwgVGVsZXJpay5SZXBvcnRpbmcsIFZlcnNpb249
+        Ny4yLjEzLjEwMTYsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49YTlkNzk4M2RmY2MyNjFi
+        ZV1dAwAAAAZfaXRlbXMFX3NpemUIX3ZlcnNpb24EAAAqVGVsZXJpay5SZXBvcnRpbmcuU3FsRGF0YVNv
+        dXJjZVBhcmFtZXRlcltdAgAAAAgICQQAAAABAAAABQAAAAcEAAAAAAEAAAAEAAAABChUZWxlcmlrLlJl
+        cG9ydGluZy5TcWxEYXRhU291cmNlUGFyYW1ldGVyAgAAAAkFAAAADQMMBgAAAE5TeXN0ZW0uRGF0YSwg
+        VmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkz
+        NGUwODkMBwAAAElTeXN0ZW0sIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNL
+        ZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQUAAAAoVGVsZXJpay5SZXBvcnRpbmcuU3FsRGF0YVNvdXJj
+        ZVBhcmFtZXRlcgQAAAAGZGJUeXBlGERhdGFTb3VyY2VQYXJhbWV0ZXIrbmFtZRlEYXRhU291cmNlUGFy
+        YW1ldGVyK3ZhbHVlI0RhdGFTb3VyY2VQYXJhbWV0ZXIrUHJvcGVydHlDaGFuZ2VkBAECBBJTeXN0ZW0u
+        RGF0YS5EYlR5cGUGAAAAMVN5c3RlbS5Db21wb25lbnRNb2RlbC5Qcm9wZXJ0eUNoYW5nZWRFdmVudEhh
+        bmRsZXIHAAAAAgAAAAX4////ElN5c3RlbS5EYXRhLkRiVHlwZQEAAAAHdmFsdWVfXwAIBgAAABAAAAAG
+        CQAAAAtAUGFyYW1ldGVyMQoKCw==
 </value>
   </data>
 </root>

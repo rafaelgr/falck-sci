@@ -304,7 +304,7 @@ namespace LainsaSciWinWeb {
            //         return;
                 if(rdcEmpresa.SelectedValue != "") {
                     ue.Empresa = CntLainsaSci.GetEmpresa(int.Parse(rdcEmpresa.SelectedValue), ctx);
-                    ue.Instalacion = CntLainsaSci.GetInstalacion(int.Parse(rdcInstalacion.SelectedValue), ctx);
+                    if (rdcInstalacion.SelectedValue != "") ue.Instalacion = CntLainsaSci.GetInstalacion(int.Parse(rdcInstalacion.SelectedValue), ctx);
                     ue.Usuario = usuario;
                     ctx.Add(ue);
                     ctx.SaveChanges();

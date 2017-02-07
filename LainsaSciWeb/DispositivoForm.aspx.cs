@@ -579,7 +579,8 @@ public partial class DispositivoForm : System.Web.UI.Page
 
 
         foreach(TipoDispositivo tp in CntLainsaSci.GetTipoDispositivos(usuario, ctx)) {
-            if(tp.Empresa == null || (tp.Empresa.EmpresaId == tp.Empresa.EmpresaId && tp.Instalacion == null) || (tp.Instalacion != null && tp.Instalacion.InstalacionId == i.InstalacionId)) {
+            // FALCKBDM-3
+            if(tp.Empresa == null || tp.Empresa != null && tp.Instalacion == null && (tp.Empresa.EmpresaId == i.Empresa.EmpresaId) || (tp.Instalacion != null && tp.Instalacion.InstalacionId == i.InstalacionId)) {
                 rdcTipoDisp.Items.Add(new RadComboBoxItem(tp.Nombre, tp.TipoId.ToString()));
             }
         }

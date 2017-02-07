@@ -63,6 +63,36 @@ namespace LainsaSciModelo
             return l_ret;
         }
 
+        public static IList<Instalacion> GetInstalacionesEmpresa(Empresa e, Usuario usu, LainsaSci ctx)
+        {
+
+            IList<Instalacion> l = new List<Instalacion>();
+            List<Instalacion> l_ret = new List<Instalacion>();
+            foreach (UsuarioEmpresa ue in usu.UsuarioEmpresas)
+            {
+                if (ue.Empresa != null && (ue.Empresa.EmpresaId == e.EmpresaId))
+                {
+                    if (ue.Empresa == null)
+                    {
+                        l = ctx.Instalacions.OrderBy(x => x.Nombre).ToList<Instalacion>();
+                    }
+                    else if (ue.Instalacion == null)
+                    {
+                        l = ue.Empresa.Instalaciones.OrderBy(x => x.Nombre).ToList<Instalacion>();
+                    }
+                    else
+                    {
+                        l = (from i in ctx.Instalacions
+                             where i.InstalacionId == ue.Instalacion.InstalacionId
+                             orderby i.Nombre
+                             select i).ToList<Instalacion>();
+                    }
+                    l_ret.AddRange(l);
+                }
+            }
+            return l_ret;
+        }
+
         public static IList<Dispositivo> GetDispositivos(Usuario u, LainsaSci ctx) {
             IList<Dispositivo> dsps = new List<Dispositivo>();
             List<Dispositivo> dpsps_ret = new List<Dispositivo>();

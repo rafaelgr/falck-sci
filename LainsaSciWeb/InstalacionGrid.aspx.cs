@@ -186,7 +186,10 @@ public partial class InstalacionGrid : System.Web.UI.Page
             RadGrid1.DataSource = CntLainsaSci.GetInstalaciones(usuario, ctx);
         else
             RadGrid1.DataSource = CntLainsaSci.GetInstalaciones(ctx);
-        if (empresa != null) RadGrid1.DataSource = empresa.Instalaciones;
+        if (empresa != null)
+        {
+            RadGrid1.DataSource = CntLainsaSci.GetInstalacionesEmpresa(empresa, usuario, ctx);
+        }
         if (rebind)
             RadGrid1.Rebind();
     }

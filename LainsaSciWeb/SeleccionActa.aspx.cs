@@ -98,21 +98,41 @@ public partial class SeleccionActa : System.Web.UI.Page
        if (rcbEmpresa.Items.Count > 0)
        {
            rcbEmpresa.Items[0].Selected = true;
-           CargaInstalaciones(CntLainsaSci.GetEmpresa(int.Parse(rcbEmpresa.SelectedValue), ctx));
+           CargaInstalaciones(CntLainsaSci.GetEmpresa(int.Parse(rcbEmpresa.SelectedValue), ctx), usuario);
        }
        else
            rcbEmpresa.Items.Clear();
     }
-    protected void CargaInstalaciones(Empresa empresa)
+    protected void CargaInstalaciones(Empresa empresa, Usuario usu)
     {
         rcbInstalacion.Items.Clear();
+        bool todas = true;
         if (empresa == null)
             return;
-        rcbInstalacion.Items.Add(new RadComboBoxItem("Todas", ""));
-        foreach (Instalacion instalacion in empresa.Instalaciones)
+        if (usu == null)
+            return;
+        foreach (UsuarioEmpresa ue in usu.UsuarioEmpresas)
+        {
+            if (ue.Empresa.EmpresaId == empresa.EmpresaId)
+            {
+                if (ue.Instalacion == null)
+                {
+                    todas = true;
+                }
+                else
+                {
+                    todas = false;
+                }
+            }
+        }
+        if (todas) rcbInstalacion.Items.Add(new RadComboBoxItem("Todas", ""));
+
+
+        foreach (Instalacion instalacion in CntLainsaSci.GetInstalaciones(empresa, usu, ctx))
         {
             rcbInstalacion.Items.Add(new RadComboBoxItem(instalacion.Nombre, instalacion.InstalacionId.ToString()));
         }
+        rcbInstalacion.Items[0].Selected = true;
     }
     protected void CargaComboUsuarios(Usuario usu)
     {
@@ -214,7 +234,7 @@ public partial class SeleccionActa : System.Web.UI.Page
         if (e.Value != "")
         {
             Empresa empresa = CntLainsaSci.GetEmpresa(int.Parse(e.Value), ctx);
-            CargaInstalaciones(empresa);
+            CargaInstalaciones(empresa, usuario);
         }
         else
             rcbInstalacion.Items.Clear();

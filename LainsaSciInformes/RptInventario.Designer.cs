@@ -15,6 +15,7 @@ namespace LainsaSciInformes
             Telerik.Reporting.Group group3 = new Telerik.Reporting.Group();
             Telerik.Reporting.ReportParameter reportParameter1 = new Telerik.Reporting.ReportParameter();
             Telerik.Reporting.ReportParameter reportParameter2 = new Telerik.Reporting.ReportParameter();
+            Telerik.Reporting.ReportParameter reportParameter3 = new Telerik.Reporting.ReportParameter();
             Telerik.Reporting.Drawing.StyleRule styleRule1 = new Telerik.Reporting.Drawing.StyleRule();
             this.groupFooterSection1 = new Telerik.Reporting.GroupFooterSection();
             this.groupHeaderSection1 = new Telerik.Reporting.GroupHeaderSection();
@@ -24,6 +25,7 @@ namespace LainsaSciInformes
             this.groupFooterSection3 = new Telerik.Reporting.GroupFooterSection();
             this.groupHeaderSection3 = new Telerik.Reporting.GroupHeaderSection();
             this.textBox6 = new Telerik.Reporting.TextBox();
+            this.sqlEmpresa = new Telerik.Reporting.SqlDataSource();
             this.sqlInstalacion = new Telerik.Reporting.SqlDataSource();
             this.pageHeaderSection1 = new Telerik.Reporting.PageHeaderSection();
             this.pictureBox1 = new Telerik.Reporting.PictureBox();
@@ -49,7 +51,6 @@ namespace LainsaSciInformes
             this.textBox34 = new Telerik.Reporting.TextBox();
             this.textBox33 = new Telerik.Reporting.TextBox();
             this.sqlDispositivos = new Telerik.Reporting.SqlDataSource();
-            this.sqlEmpresa = new Telerik.Reporting.SqlDataSource();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // groupFooterSection1
@@ -116,14 +117,20 @@ namespace LainsaSciInformes
             this.textBox6.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox6.Value = "Modelo:{Fields.nom_modelo}";
             // 
+            // sqlEmpresa
+            // 
+            this.sqlEmpresa.ConnectionString = "LainsaSciCTX";
+            this.sqlEmpresa.Name = "sqlEmpresa";
+            this.sqlEmpresa.SelectCommand = "SELECT        empresa_id, nombre\r\nFROM            empresa";
+            // 
             // sqlInstalacion
             // 
             this.sqlInstalacion.ConnectionString = "LainsaSciCTX";
             this.sqlInstalacion.Name = "sqlInstalacion";
             this.sqlInstalacion.Parameters.AddRange(new Telerik.Reporting.SqlDataSourceParameter[] {
-            new Telerik.Reporting.SqlDataSourceParameter("@Empresa", System.Data.DbType.Int32, "=Parameters.Empresa.Value")});
+            new Telerik.Reporting.SqlDataSourceParameter("@Instalaciones", System.Data.DbType.Int32, "=Parameters.Instalaciones.Value")});
             this.sqlInstalacion.SelectCommand = "SELECT        instalacion_id, nombre\r\nFROM            instalacion\r\nwhere instalac" +
-    "ion.empresa_id IN (@Empresa)";
+    "ion.instalacion_id IN (@Instalaciones)";
             // 
             // pageHeaderSection1
             // 
@@ -461,12 +468,6 @@ namespace LainsaSciInformes
             new Telerik.Reporting.SqlDataSourceParameter("@Instalacion", System.Data.DbType.Int32, "=Parameters.Instalacion.Value")});
             this.sqlDispositivos.SelectCommand = resources.GetString("sqlDispositivos.SelectCommand");
             // 
-            // sqlEmpresa
-            // 
-            this.sqlEmpresa.ConnectionString = "LainsaSciCTX";
-            this.sqlEmpresa.Name = "sqlEmpresa";
-            this.sqlEmpresa.SelectCommand = "SELECT        empresa_id, nombre\r\nFROM            empresa";
-            // 
             // RptInventario
             // 
             this.DataSource = this.sqlDispositivos;
@@ -515,8 +516,11 @@ namespace LainsaSciInformes
             reportParameter2.Text = "Instalacion";
             reportParameter2.Type = Telerik.Reporting.ReportParameterType.Integer;
             reportParameter2.Visible = true;
+            reportParameter3.MultiValue = true;
+            reportParameter3.Name = "Instalaciones";
             this.ReportParameters.Add(reportParameter1);
             this.ReportParameters.Add(reportParameter2);
+            this.ReportParameters.Add(reportParameter3);
             this.Style.BackgroundColor = System.Drawing.Color.White;
             styleRule1.Selectors.AddRange(new Telerik.Reporting.Drawing.ISelector[] {
             new Telerik.Reporting.Drawing.TypeSelector(typeof(Telerik.Reporting.TextItemBase)),

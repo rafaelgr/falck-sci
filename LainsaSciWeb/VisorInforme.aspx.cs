@@ -56,35 +56,26 @@ public partial class VisorInforme : System.Web.UI.Page
                     
                     RptInventario rptInventario = new RptInventario();
                     this.Title = "Inventario por instalacion";
-                    foreach(UsuarioEmpresa ue in usuario.UsuarioEmpresas){
-                        if(ue.Empresa == null)
-                            isTrue = false;
-                    }
-                    if (isTrue)
+
+                    IList<int> lista = new List<int>();
+                    foreach(Instalacion inst in CntLainsaSci.GetInstalaciones(usuario, ctx))
                     {
-                        foreach(UsuarioEmpresa ue in usuario.UsuarioEmpresas){
-                            aux = aux + ue.Empresa.EmpresaId;
-                        }
-                        rptInventario.ReportParameters["Empresa"].Value = aux;
-                        rptInventario.ReportParameters["Empresa"].Visible = false;
+                        lista.Add(inst.InstalacionId);
                     }
+                    rptInventario.ReportParameters["Empresa"].Visible = false;
+                    rptInventario.ReportParameters["Instalaciones"].Value = lista;
                     ReportViewer1.Report = rptInventario;
                     break;
                 case "RptIncidenciaEmpresa":
                     RptIncidenciaEmpresa rptIncidenciaEmpresa = new RptIncidenciaEmpresa();
                     this.Title = "Incidencias por empresa";
-                    foreach(UsuarioEmpresa ue in usuario.UsuarioEmpresas){
-                        if(ue.Empresa == null)
-                            isTrue = false;
-                    }
-                    if (isTrue)
+
+                    IList<int> lista2 = new List<int>();
+                    foreach(Empresa emp in CntLainsaSci.GetEmpresas(usuario, ctx))
                     {
-                        foreach(UsuarioEmpresa ue in usuario.UsuarioEmpresas) {
-                            aux = aux + ue.Empresa.EmpresaId;
-                        }
-                        rptIncidenciaEmpresa.ReportParameters["Empresa"].Value = aux;
-                        rptIncidenciaEmpresa.ReportParameters["Empresa"].Visible = false;
+                        lista2.Add(emp.EmpresaId);
                     }
+                    rptIncidenciaEmpresa.ReportParameters["Empresas"].Value = lista2;
                     ReportViewer1.Report = rptIncidenciaEmpresa;
                     break;
             }

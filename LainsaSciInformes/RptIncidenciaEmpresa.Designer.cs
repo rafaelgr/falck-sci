@@ -14,6 +14,7 @@ namespace LainsaSciInformes
             Telerik.Reporting.Group group2 = new Telerik.Reporting.Group();
             Telerik.Reporting.Group group3 = new Telerik.Reporting.Group();
             Telerik.Reporting.ReportParameter reportParameter1 = new Telerik.Reporting.ReportParameter();
+            Telerik.Reporting.ReportParameter reportParameter2 = new Telerik.Reporting.ReportParameter();
             Telerik.Reporting.Drawing.StyleRule styleRule1 = new Telerik.Reporting.Drawing.StyleRule();
             this.groupFooterSection1 = new Telerik.Reporting.GroupFooterSection();
             this.groupHeaderSection1 = new Telerik.Reporting.GroupHeaderSection();
@@ -33,6 +34,7 @@ namespace LainsaSciInformes
             this.textBox12 = new Telerik.Reporting.TextBox();
             this.textBox13 = new Telerik.Reporting.TextBox();
             this.textBox14 = new Telerik.Reporting.TextBox();
+            this.textBox7 = new Telerik.Reporting.TextBox();
             this.sqlEmpresas = new Telerik.Reporting.SqlDataSource();
             this.pageHeaderSection1 = new Telerik.Reporting.PageHeaderSection();
             this.pictureBox1 = new Telerik.Reporting.PictureBox();
@@ -44,7 +46,6 @@ namespace LainsaSciInformes
             this.textBox17 = new Telerik.Reporting.TextBox();
             this.pageFooterSection1 = new Telerik.Reporting.PageFooterSection();
             this.sqlIncidencias = new Telerik.Reporting.SqlDataSource();
-            this.textBox7 = new Telerik.Reporting.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // groupFooterSection1
@@ -188,11 +189,23 @@ namespace LainsaSciInformes
             this.textBox14.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Mm(187.99990844726563D), Telerik.Reporting.Drawing.Unit.Mm(5.9960002899169922D));
             this.textBox14.Value = "= Fields.INCIDENCIA_COMENTARIOS";
             // 
+            // textBox7
+            // 
+            this.textBox7.Format = "{0:dd/MM/yyyy}";
+            this.textBox7.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Mm(92.003990173339844D), Telerik.Reporting.Drawing.Unit.Mm(5.0019998550415039D));
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Mm(27.99799919128418D), Telerik.Reporting.Drawing.Unit.Mm(4.9999933242797852D));
+            this.textBox7.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(11D);
+            this.textBox7.Value = "= Fields.FECHA_CIERRE.Date";
+            // 
             // sqlEmpresas
             // 
             this.sqlEmpresas.ConnectionString = "LainsaSciCTX";
             this.sqlEmpresas.Name = "sqlEmpresas";
-            this.sqlEmpresas.SelectCommand = "SELECT        empresa_id, nombre\r\nFROM            empresa";
+            this.sqlEmpresas.Parameters.AddRange(new Telerik.Reporting.SqlDataSourceParameter[] {
+            new Telerik.Reporting.SqlDataSourceParameter("@Empresas", System.Data.DbType.Int32, "=Parameters.Empresas.Value")});
+            this.sqlEmpresas.SelectCommand = "SELECT        empresa_id, nombre\r\nFROM            empresa\r\nwhere empresa_id IN (@" +
+    "Empresas)";
             // 
             // pageHeaderSection1
             // 
@@ -286,15 +299,6 @@ namespace LainsaSciInformes
             new Telerik.Reporting.SqlDataSourceParameter("@Empresa", System.Data.DbType.Int32, "=Parameters.Empresa.Value")});
             this.sqlIncidencias.SelectCommand = resources.GetString("sqlIncidencias.SelectCommand");
             // 
-            // textBox7
-            // 
-            this.textBox7.Format = "{0:dd/MM/yyyy}";
-            this.textBox7.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Mm(92.003990173339844D), Telerik.Reporting.Drawing.Unit.Mm(5.0019998550415039D));
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Mm(27.99799919128418D), Telerik.Reporting.Drawing.Unit.Mm(4.9999933242797852D));
-            this.textBox7.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(11D);
-            this.textBox7.Value = "= Fields.FECHA_CIERRE.Date";
-            // 
             // RptIncidenciaEmpresa
             // 
             this.DataSource = this.sqlIncidencias;
@@ -335,7 +339,10 @@ namespace LainsaSciInformes
             reportParameter1.Text = "Empresa";
             reportParameter1.Type = Telerik.Reporting.ReportParameterType.Integer;
             reportParameter1.Visible = true;
+            reportParameter2.MultiValue = true;
+            reportParameter2.Name = "Empresas";
             this.ReportParameters.Add(reportParameter1);
+            this.ReportParameters.Add(reportParameter2);
             this.Style.BackgroundColor = System.Drawing.Color.White;
             styleRule1.Selectors.AddRange(new Telerik.Reporting.Drawing.ISelector[] {
             new Telerik.Reporting.Drawing.TypeSelector(typeof(Telerik.Reporting.TextItemBase)),

@@ -118,7 +118,7 @@
 	</telerik:RadSkinManager>
 	<div id="MainArea" class="normalText">
          <telerik:RadSplitter ID="SplMain" runat="server" Width="100%" Height="750px" Orientation="Horizontal">
-            <telerik:RadPane ID="SplData" runat="server" Height="100px"></telerik:RadPane>
+            <telerik:RadPane ID="SplData" runat="server" Height="200px"></telerik:RadPane>
             <telerik:RadSplitBar ID="SplBar" runat="server" CollapseMode="Both"></telerik:RadSplitBar>
             <telerik:RadPane ID="SplReport" runat="server"></telerik:RadPane>
          </telerik:RadSplitter>

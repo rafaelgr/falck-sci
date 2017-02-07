@@ -391,13 +391,27 @@ public partial class SeleccionInforme : System.Web.UI.Page
     protected void CargaInstalaciones(Empresa empresa,Usuario usu)
     {
         rcbInstalacion.Items.Clear();
+        bool todas = true;
         if(empresa == null)
             return;
         if(usu == null)
             return;
-
+        foreach (UsuarioEmpresa ue in usu.UsuarioEmpresas)
+        {
+            if (ue.Empresa.EmpresaId == empresa.EmpresaId)
+            {
+                if (ue.Instalacion == null)
+                {
+                    todas = true;
+                }
+                else
+                {
+                    todas = false;
+                }
+            }
+        }
         rcbInstalacion.Items.Add(new RadComboBoxItem("", RCD_EMPTY));
-        rcbInstalacion.Items.Add(new RadComboBoxItem("Todas", RCD_ALL));
+        if (todas) rcbInstalacion.Items.Add(new RadComboBoxItem("Todas", RCD_ALL));
 
 
         foreach(Instalacion instalacion in CntLainsaSci.GetInstalaciones(empresa, usu, ctx))

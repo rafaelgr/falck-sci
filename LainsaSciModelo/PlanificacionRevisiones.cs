@@ -349,8 +349,16 @@ namespace LainsaSciModelo
                         if(ue.Empresa == null) {
                             return aux;
                         } else {
-                            l_aux.Add(ue.Empresa.EmpresaId.ToString() + '_' + ue.Instalacion.InstalacionId.ToString());
-                            l_aux.Add(ue.Empresa.EmpresaId.ToString() + '_');
+                            if (ue.Instalacion == null)
+                            {
+                                l_aux.Add(ue.Empresa.EmpresaId.ToString() + '_');
+                            }
+                            else
+                            {
+                                l_aux.Add(ue.Empresa.EmpresaId.ToString() + '_' + ue.Instalacion.InstalacionId.ToString());
+                            }
+                            
+                            
                         }
                     }
 
@@ -360,7 +368,7 @@ namespace LainsaSciModelo
                             if(ue.Empresa != null) {
                                 pp = ue.Empresa.EmpresaId.ToString();
                                 pp += "_";
-                                if(ue.Instalacion.InstalacionId.ToString() != "") {
+                                if(ue.Instalacion != null) {
                                     pp += ue.Instalacion.InstalacionId.ToString();
                                 }
                             } else {

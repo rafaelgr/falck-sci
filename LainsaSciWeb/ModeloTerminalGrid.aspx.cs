@@ -853,6 +853,8 @@ namespace LainsaSciWinWeb
 	                INNER JOIN instalacion ii
 		                ON ii.instalacion_id = d.instalacion_id
                 WHERE 
+                    i.fecha_cierre IS NULL 
+                    AND
 	                ii.empresa_id = " + empresa.EmpresaId.ToString() + @"
                 ";
             string texto = context.CurrentOperationText.ToString();

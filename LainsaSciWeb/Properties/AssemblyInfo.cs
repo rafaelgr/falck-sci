@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Ariadna Software S.L.")]
 [assembly: AssemblyProduct("LainsaSciWinWeb")]
-[assembly: AssemblyCopyright("(c) Ariadna Software S.L. 2014")]
+[assembly: AssemblyCopyright("(c) Ariadna Software S.L. 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

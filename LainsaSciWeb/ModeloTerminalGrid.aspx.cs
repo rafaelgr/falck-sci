@@ -579,7 +579,8 @@ namespace LainsaSciWinWeb
             string sql = @"
                 SELECT 
 	                instalacion_id,
-	                nombre
+	                nombre,
+                    empresa_id
                 FROM 
 	                instalacion
                 WHERE 
@@ -599,11 +600,13 @@ namespace LainsaSciWinWeb
                                     Instalacion
                                         (
                                             instalacion_id, 
+                                            empresa_id,
                                             nombre
                                         ) 
                                     VALUES
                                         (
                                             " + dr["instalacion_id"].ToString() + @",
+                                            " + dr["empresa_id"].ToString() + @",
                                             '" + txt + @"'
                                         )
                                 ";
@@ -764,7 +767,8 @@ namespace LainsaSciWinWeb
 	                IFNULL(d.modelo_id, 0) AS modelo_id,
 	                d.operativo,
 	                IFNULL(d.posicion,'') AS posicion,
-	                IFNULL(d.cod_barras, '') AS cod_barras
+	                IFNULL(d.cod_barras, '') AS cod_barras,
+                    IFNULL(d.numero_industria, '') AS numero_industria
                 FROM 
 	                dispositivo d
 	                INNER JOIN instalacion i
@@ -803,7 +807,8 @@ namespace LainsaSciWinWeb
                                         codbarras, 
                                         operativo, 
                                         modelo, 
-                                        posicion
+                                        posicion,
+                                        nIndustria
                                     )
                                 VALUES
                                     (
@@ -820,7 +825,8 @@ namespace LainsaSciWinWeb
                                         '" + dr["cod_barras"].ToString() + @"',
                                         " + dr["operativo"].ToString() + @",
                                         " + dr["modelo_id"].ToString() + @",
-                                        '" + dr["posicion"].ToString().Replace("'","''") + @"'
+                                        '" + dr["posicion"].ToString().Replace("'","''") + @"',
+                                        '" + dr["numero_industria"].ToString() + @"'
                                     )
                                 ";
                         using(SqlCeCommand cmdDst = connCE.CreateCommand()) {
@@ -921,6 +927,8 @@ namespace LainsaSciWinWeb
 	                INNER JOIN instalacion ii
 		                ON ii.instalacion_id = d.instalacion_id
                 WHERE 
+                    i.fecha_cierre IS NULL 
+                    AND
 	                ii.empresa_id = " + empresa.EmpresaId.ToString() + @"
                 ";
             string texto = context.CurrentOperationText.ToString();

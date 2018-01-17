@@ -340,48 +340,20 @@ namespace LainsaSciModelo
                             if(p.Usuario.GrupoTrabajo != null)
                                 if(p.Usuario.GrupoTrabajo.GrupoTrabajoId == u.GrupoTrabajo.GrupoTrabajoId)
                                     l.Add(p);
-                    return l;
                 } else {
 
-                    List<string> l_aux = new List<string>();
-
-                    foreach(UsuarioEmpresa ue in u.UsuarioEmpresas) {
-                        if(ue.Empresa == null) {
-                            return aux;
-                        } else {
-                            if (ue.Instalacion == null)
-                            {
-                                l_aux.Add(ue.Empresa.EmpresaId.ToString() + '_');
-                            }
-                            else
-                            {
-                                l_aux.Add(ue.Empresa.EmpresaId.ToString() + '_' + ue.Instalacion.InstalacionId.ToString());
-                            }
-                            
-                            
-                        }
-                    }
-
+                    IList<Instalacion> li = CntLainsaSci.GetInstalacionesUsuarioEmpresa(u, ctx);
                     foreach(Programa p in aux) {
-                        string pp = "";
-                        foreach(UsuarioEmpresa ue in p.Usuario.UsuarioEmpresas) {
-                            if(ue.Empresa != null) {
-                                pp = ue.Empresa.EmpresaId.ToString();
-                                pp += "_";
-                                if(ue.Instalacion != null) {
-                                    pp += ue.Instalacion.InstalacionId.ToString();
+                        foreach (Instalacion i in li)
+                        {
+                            foreach (Revision r in p.Revisions)
+                            {
+                                if (r.Dispositivo.Instalacion.InstalacionId == i.InstalacionId)
+                                {
+                                    l.Add(p);
                                 }
-                            } else {
-                                pp = "_";
-                            }
-                            if(l_aux.Contains(pp)) {
-                                l.Add(p);
-                                break;
                             }
                         }
-
-                        return l;
-
                     }
                 }
             }

@@ -248,6 +248,13 @@ namespace LainsaSciWinWeb
                 CargarSustitucion(empresa, prg, connCE, connMy, context);
                 RadProgress(context, 16);
 
+                context.CurrentOperationText = "Exportando datos: cargando fabricantes...";
+                CargarFabricante(empresa, connCE, connMy, context);
+                RadProgress(context, 17);
+
+                context.CurrentOperationText = "Exportando datos: cargando agentes extintores...";
+                CargarAgenteExtintor(empresa, connCE, connMy, context);
+                RadProgress(context, 18);
 
 
                 connCE.Close();
@@ -749,6 +756,101 @@ namespace LainsaSciWinWeb
         }
 
 
+        private static void CargarFabricante(Empresa empresa, SqlCeConnection connCE, MySqlConnection connMy, RadProgressContext context)
+        {
+            string sql = @"
+                SELECT 
+	                fabricante_id,
+	                nombre
+                FROM 
+	                fabricante
+                WHERE 
+	                empresa_id = " + empresa.EmpresaId.ToString() + @"
+                ";
+            string texto = context.CurrentOperationText.ToString();
+            int numReg = 0;
+            string txt = "";
+            using (MySqlCommand cmdSrc = connMy.CreateCommand())
+            {
+                cmdSrc.CommandText = sql;
+                using (MySqlDataReader dr = cmdSrc.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        txt = dr["nombre"].ToString();
+                        context.CurrentOperationText = String.Format("{0}{1} [{2} de ?]", texto, txt, numReg);
+                        sql = @"
+                                INSERT INTO 
+                                    Fabricante
+                                        (
+                                            fabricante_id, 
+                                            nombre
+                                        ) 
+                                    VALUES
+                                        (
+                                            " + dr["fabricante_id"].ToString() + @",
+                                            '" + txt + @"'
+                                        )
+                                ";
+                        using (SqlCeCommand cmdDst = connCE.CreateCommand())
+                        {
+                            cmdDst.CommandText = sql;
+                            cmdDst.ExecuteNonQuery();
+                        }
+                        numReg++;
+                    }
+
+                }
+            }
+        }
+
+        private static void CargarAgenteExtintor(Empresa empresa, SqlCeConnection connCE, MySqlConnection connMy, RadProgressContext context)
+        {
+            string sql = @"
+                SELECT 
+	                agente_extintor_id,
+	                descripcion
+                FROM 
+	                agente_extintor
+                WHERE 
+	                empresa_id = " + empresa.EmpresaId.ToString() + @"
+                ";
+            string texto = context.CurrentOperationText.ToString();
+            int numReg = 0;
+            string txt = "";
+            using (MySqlCommand cmdSrc = connMy.CreateCommand())
+            {
+                cmdSrc.CommandText = sql;
+                using (MySqlDataReader dr = cmdSrc.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        txt = dr["descripcion"].ToString();
+                        context.CurrentOperationText = String.Format("{0}{1} [{2} de ?]", texto, txt, numReg);
+                        sql = @"
+                                INSERT INTO 
+                                    AgenteExtintor
+                                        (
+                                            agente_extintor_id, 
+                                            descripcion
+                                        ) 
+                                    VALUES
+                                        (
+                                            " + dr["agente_extintor_id"].ToString() + @",
+                                            '" + txt + @"'
+                                        )
+                                ";
+                        using (SqlCeCommand cmdDst = connCE.CreateCommand())
+                        {
+                            cmdDst.CommandText = sql;
+                            cmdDst.ExecuteNonQuery();
+                        }
+                        numReg++;
+                    }
+
+                }
+            }
+        }
 
 
         private static void CargarDispositivos(Empresa empresa, SqlCeConnection connCE, MySqlConnection connMy, RadProgressContext context) {
@@ -768,7 +870,11 @@ namespace LainsaSciWinWeb
 	                d.operativo,
 	                IFNULL(d.posicion,'') AS posicion,
 	                IFNULL(d.cod_barras, '') AS cod_barras,
-                    IFNULL(d.numero_industria, '') AS numero_industria
+                    IFNULL(d.numero_industria, '') AS numero_industria,
+                    d.carga_kg,
+                    d.fabricante_id,
+                    d.fecha_fabricacion,
+                    d.agente_extintor_id
                 FROM 
 	                dispositivo d
 	                INNER JOIN instalacion i
@@ -808,7 +914,11 @@ namespace LainsaSciWinWeb
                                         operativo, 
                                         modelo, 
                                         posicion,
-                                        nIndustria
+                                        nIndustria,
+                                        carga_kg,
+                                        fabricante_id,
+                                        fabricado,
+                                        agente_extintor_id
                                     )
                                 VALUES
                                     (
@@ -826,7 +936,11 @@ namespace LainsaSciWinWeb
                                         " + dr["operativo"].ToString() + @",
                                         " + dr["modelo_id"].ToString() + @",
                                         '" + dr["posicion"].ToString().Replace("'","''") + @"',
-                                        '" + dr["numero_industria"].ToString() + @"'
+                                        '" + dr["numero_industria"].ToString() + @"',
+                                        '" + dr["carga_kg"].ToString() + @"',
+                                        '" + dr["fabricante_id"].ToString() + @"',
+                                        " + ParseFecha(dr, "fecha_fabricacion") + @",
+                                        '" + dr["agente_extintor_id"].ToString() + @"'
                                     )
                                 ";
                         using(SqlCeCommand cmdDst = connCE.CreateCommand()) {

@@ -120,6 +120,36 @@ namespace LainsaSciModelo
                     where ue.Usuario_empresa_id == id
                     select ue).FirstOrDefault<UsuarioEmpresa>();
         }
+
+        // Obtiene la lista de todas las instalaciones a las que está autorizado un usuario
+        // según el nuevo concepto de usuario empresa.
+        public static IList<Instalacion> GetInstalacionesUsuarioEmpresa(Usuario u, LainsaSci ctx)
+        {
+            IList<Instalacion> li = new List<Instalacion>();
+            // Si no tiene ningún registro asociado es que está autorizado a todas las instalaciones de todas las empresas
+            //if (u.UsuarioEmpresas.Count == 0)
+            //{
+            //    return (from i in ctx.Instalacions select i).ToList<Instalacion>();
+            //}
+            foreach (UsuarioEmpresa ue in u.UsuarioEmpresas)
+            {
+                if (ue.Instalacion == null)
+                {
+                    // Caso 1: El usuario está autorizado a toda la empresa
+                    foreach (Instalacion i in ue.Empresa.Instalaciones)
+                    {
+                        li.Add(i);
+                    }
+                }
+                else
+                {
+                    // Caso 2: La autorización es específica para una instalación.
+                    li.Add(ue.Instalacion);
+                }
+                
+            }
+            return li;
+        }
         
         public static Usuario GetUsuario(string login, LainsaSci ctx)
         {

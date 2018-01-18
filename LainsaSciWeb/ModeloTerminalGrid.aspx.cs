@@ -917,7 +917,7 @@ namespace LainsaSciWinWeb
                                         nIndustria,
                                         carga_kg,
                                         fabricante_id,
-                                        fabricado,
+                                        fecha_fabricacion,
                                         agente_extintor_id
                                     )
                                 VALUES
@@ -937,7 +937,7 @@ namespace LainsaSciWinWeb
                                         " + dr["modelo_id"].ToString() + @",
                                         '" + dr["posicion"].ToString().Replace("'","''") + @"',
                                         '" + dr["numero_industria"].ToString() + @"',
-                                        '" + dr["carga_kg"].ToString() + @"',
+                                        '" + dr["carga_kg"].ToString().Replace(",",".") + @"',
                                         '" + dr["fabricante_id"].ToString() + @"',
                                         " + ParseFecha(dr, "fecha_fabricacion") + @",
                                         '" + dr["agente_extintor_id"].ToString() + @"'

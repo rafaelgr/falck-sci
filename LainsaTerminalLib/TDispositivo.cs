@@ -200,6 +200,37 @@ namespace LainsaTerminalLib
             get { return abm; }
             set { abm = value; }
         }
+        // nuevos campos que pueden venir en el terminal
+        private double cargaKg;
+        public double CargaKg
+        {
+            get { return cargaKg; }
+            set { cargaKg = value; }
+        }
+        private int fabricanteId;
+        public int FabricanteId
+        {
+            get { return fabricanteId; }
+            set { fabricanteId = value; }
+        }
+        private DateTime fechaFabricacion;
+        public DateTime FechaFabricacion
+        {
+            get { return fechaFabricacion; }
+            set { fechaFabricacion = value; }
+        }
+        private int agenteExtintorId;
+        public int AgenteExtintorId
+        {
+            get { return agenteExtintorId; }
+            set { agenteExtintorId = value; }
+        }
+        private string nIndustria;
+        public string NIndustria
+        {
+            get { return nIndustria; }
+            set { nIndustria = value; }
+        }
 
     }
 
@@ -224,6 +255,18 @@ namespace LainsaTerminalLib
                 dispositivo.FechaBaja = dr.GetDateTime(10);
             if (dr[11] != DBNull.Value)
                 dispositivo.Modelo = GetTModeloDispositivo(dr.GetInt32(11), conn);
+            // posibles nuevos campos
+            // nuevos campos vrs 2018.0.1.0
+            if (dr[16] != DBNull.Value)
+                dispositivo.NIndustria = dr.GetString(16);
+            if (dr[17] != DBNull.Value)
+                dispositivo.CargaKg = dr.GetDouble(17);
+            if (dr[18] != DBNull.Value)
+                dispositivo.FabricanteId = dr.GetInt32(18);
+            if (dr[19] != DBNull.Value)
+                dispositivo.FechaFabricacion = dr.GetDateTime(19);
+            if (dr[20] != DBNull.Value)
+                dispositivo.AgenteExtintorId = dr.GetInt32(20);
          }
         public static TDispositivo GetTDispositivo(int id, SqlCeConnection conn)
         {
@@ -255,6 +298,17 @@ namespace LainsaTerminalLib
                                 dispositivo.Modelo = GetTModeloDispositivo(dr.GetInt32(11), conn);
                             dispositivo.Operativo = dr.GetBoolean(12);
                             dispositivo.Abm = dr.GetByte(15);
+                            // nuevos campos vrs 2018.0.1.0
+                            if (dr[16] != DBNull.Value)
+                                dispositivo.NIndustria = dr.GetString(16);
+                            if (dr[17] != DBNull.Value)
+                                dispositivo.CargaKg = dr.GetDouble(17);
+                            if (dr[18] != DBNull.Value)
+                                dispositivo.FabricanteId = dr.GetInt32(18);
+                            if (dr[19] != DBNull.Value)
+                                dispositivo.FechaFabricacion = dr.GetDateTime(19);
+                            if (dr[20] != DBNull.Value)
+                                dispositivo.AgenteExtintorId = dr.GetInt32(20);
                         }
                         if (!dr.IsClosed)
                             dr.Close();
@@ -287,6 +341,17 @@ namespace LainsaTerminalLib
                         dispositivo.CodBarras = dr.GetString(7);
                         dispositivo.Estado = dr.GetString(6);
                         dispositivo.Abm = dr.GetByte(15);
+                        // nuevos campos vrs 2018.0.1.0
+                        if (dr[16] != DBNull.Value)
+                            dispositivo.NIndustria = dr.GetString(16);
+                        if (dr[17] != DBNull.Value)
+                            dispositivo.CargaKg = dr.GetDouble(17);
+                        if (dr[18] != DBNull.Value)
+                            dispositivo.FabricanteId = dr.GetInt32(18);
+                        if (dr[19] != DBNull.Value)
+                            dispositivo.FechaFabricacion = dr.GetDateTime(19);
+                        if (dr[20] != DBNull.Value)
+                            dispositivo.AgenteExtintorId = dr.GetInt32(20);
                         dispositivos.Add(dispositivo);
                     }
                     if (!dr.IsClosed)
@@ -321,6 +386,17 @@ namespace LainsaTerminalLib
                         dispositivo.CodBarras = dr.GetString(7);
                         dispositivo.Estado = dr.GetString(6);
                         dispositivo.Abm = dr.GetByte(15);
+                        // nuevos campos vrs 2018.0.1.0
+                        if (dr[16] != DBNull.Value)
+                            dispositivo.NIndustria = dr.GetString(16);
+                        if (dr[17] != DBNull.Value)
+                            dispositivo.CargaKg = dr.GetDouble(17);
+                        if (dr[18] != DBNull.Value)
+                            dispositivo.FabricanteId = dr.GetInt32(18);
+                        if (dr[19] != DBNull.Value)
+                            dispositivo.FechaFabricacion = dr.GetDateTime(19);
+                        if (dr[20] != DBNull.Value)
+                            dispositivo.AgenteExtintorId = dr.GetInt32(20);
                         dispositivos.Add(dispositivo);
                     }
                     if (!dr.IsClosed)
@@ -375,6 +451,17 @@ namespace LainsaTerminalLib
             int instalacion = 0;
             if (td.Instalacion != null)
                 instalacion = td.Instalacion.InstalacionId;
+            // nuevos campos
+            double carga_kg = 0;
+            if (td.CargaKg != null) carga_kg = td.CargaKg;
+            int? fabricante_id = null;
+            if (td.FabricanteId != null) fabricante_id = td.FabricanteId;
+            string fecha_fabricacion = "NULL";
+            if (td.FechaFabricacion != null)
+                fecha_fabricacion = String.Format("'{0:MM/dd/yyyy}'", td.FechaFabricacion);
+            int? agente_extintor_id = null;
+            if (td.AgenteExtintorId != null) agente_extintor_id = td.AgenteExtintorId;
+
             // primero verificamos que si el elemento está
            // TDispositivo tdsp = GetTDispositivo(td.DispositivoId, conn);
             TDispositivo tdsp = null;
@@ -383,16 +470,20 @@ namespace LainsaTerminalLib
                 sql = @"INSERT INTO Dispositivo(dispositivo_id, nombre, 
                             empresa, instalacion, 
                             tipo, funcion, estado,
-                            fecha_caducidad, caducado, fecha_baja, codbarras, operativo, modelo, posicion) VALUES({0},'{1}','{2}',{3}, {4},'{5}','{6}',{7},{8},{9},'{10}',{11},{12},'{13}')";
+                            fecha_caducidad, caducado, fecha_baja, codbarras, operativo, modelo, posicion,
+                            carga_kg, fabricanteId, fecha_fabricacion, agente_extintor_id) 
+                            VALUES({0},'{1}','{2}',{3}, {4},'{5}','{6}',{7},{8},{9},'{10}',{11},{12},'{13}',
+                            {14},{15},{16},{17})";
             }
             else
             {
                 sql = @"UPDATE Dispositivo SET nombre='{1}',empresa='{2}',instalacion={3},
                         tipo={4}, funcion='{5}', estado='{6}'
-                        fecha_caducidad='{7}, caducado={8}, fecha_baja={9}, codbarras='{10}', operativo={11}, modelo={12}, posicion='{13}'
+                        fecha_caducidad='{7}, caducado={8}, fecha_baja={9}, codbarras='{10}', operativo={11}, modelo={12}, posicion='{13}',
+                        carga_kg={14}, fabricante_id={15}, fecha_fabricacion='{16}', agente_extintor_id = {17}
                         WHERE dispositivo_id={0}";
             }
-            sql = String.Format(sql, td.DispositivoId, td.Nombre, td.Empresa, instalacion, tipo, td.Funcion, td.Estado, fecha_caducidad,caducado,fecha_baja,td.CodBarras, operativo, modelo, posicion);
+            sql = String.Format(sql, td.DispositivoId, td.Nombre, td.Empresa, instalacion, tipo, td.Funcion, td.Estado, fecha_caducidad,caducado,fecha_baja,td.CodBarras, operativo, modelo, posicion, carga_kg, fabricante_id, fecha_fabricacion, agente_extintor_id);
             using (SqlCeCommand cmd = conn.CreateCommand())
             {
                 cmd.CommandText = sql;

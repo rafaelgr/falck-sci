@@ -602,7 +602,11 @@ namespace LainsaSciWinWeb
                         dispositivo.Funcion = "";
                         dispositivo.Estado = disp.Estado;
                         dispositivo.Caducado = false;
-                        dispositivo.CargaKg = 0;
+                        // -- Nuevos campos
+                        dispositivo.CargaKg = (decimal)disp.CargaKg;
+                        dispositivo.Fabricante = CntLainsaSci.GetFabricante(disp.FabricanteId, ctx);
+                        dispositivo.FechaFabricacion = disp.FechaFabricacion;
+                        dispositivo.AgenteExtintor = CntLainsaSci.GetAgenteExtintor(disp.AgenteExtintorId, ctx);
                         ctx.Add(dispositivo);
                         break;
                     case 2:

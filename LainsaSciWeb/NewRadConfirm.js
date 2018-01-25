@@ -4,6 +4,7 @@
 //TELERIK
 //window.radconfirm = function(text, mozEvent)
 //We will change the radconfirm function so it takes all the original radconfirm attributes
+var oldConfirm = radconfirm;
 window.radconfirm = function (text, mozEvent, oWidth, oHeight, callerObj, oTitle)
 {
     var ev = mozEvent ? mozEvent : window.event; //Moz support requires passing the event argument manually   
@@ -41,7 +42,7 @@ window.radconfirm = function (text, mozEvent, oWidth, oHeight, callerObj, oTitle
         //TELERIK
         //oldConfirm(text, callBackFn, 300, 100, null, null);       
         //We will need to modify the oldconfirm as well                
-        //oldConfirm(text, callBackFn, oWidth, oHeight, callerObj, oTitle); // Este si estaba
+        oldConfirm(text, callBackFn, oWidth, oHeight, callerObj, oTitle); // Este si estaba
     }
     return false;
 } 

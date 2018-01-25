@@ -40,6 +40,21 @@
                     function refreshGrid(arg) {
                         $find("<%= RadAjaxManager1.ClientID %>").ajaxRequest(arg);
                     }
+
+                    function confirmCallBackFn(arg) {
+                        radalert("Confirm returned the following result: " + arg);
+                    }
+
+                    function mensAlert(id) {
+                        var txt;
+                        var r = confirm("Está mezclando revisiones de varias instalaciones. Si continúa lo hace a su propio riesgo, asumiendo las posibles incidencias. ¿Está seguro?");
+                        if (r == true) {
+                            //alert("You pressed OK!");
+                            $find("<%= RadAjaxManager1.ClientID %>").ajaxRequest('mixInst');
+                        } else {
+                            // alert("You pressed Cancel!");
+                        }
+                    }
                 </script>
 
             </telerik:RadCodeBlock>

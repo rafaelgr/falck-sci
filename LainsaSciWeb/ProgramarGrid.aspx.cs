@@ -25,6 +25,9 @@ namespace LainsaSciWinWeb
         //Revision revision = null;
         string mode = ""; // the way it's called, S = for search
         string caller = ""; // who's calling the grid form
+        Programa prog = null;
+        bool firstTime = true;
+
         #endregion
         #region Init, load, unload events
         protected void Page_Init(object sender, EventArgs e)
@@ -183,8 +186,6 @@ namespace LainsaSciWinWeb
                     case "Edit":
                         break;
                     case "Program":
-                        bool firstTime = true;
-                        Programa prog = null;
                         string jCommand = "";
                         ArrayList selectedItems = GetSelectedItems();
                         Int16 stackIndex;
@@ -219,30 +220,6 @@ namespace LainsaSciWinWeb
                                         }
                             }
                          }
-
-                        //foreach (GridDataItem dataItem in RadGrid1.MasterTableView.Items)
-                        //{
-                        //    if (dataItem.Selected == true)
-                        //    {
-                        //        if (firstTime)
-                        //        {
-                        //            // Creamos el programa
-                        //            prog = new Programa();
-                        //            prog.Usuario = usuario;
-                        //            prog.Comentarios = String.Format("Programación creada el {0:dd/MM/yyyy hh:mm:ss}", DateTime.Now);
-                        //            firstTime = false;
-                        //        }
-                        //        id = (int)dataItem.OwnerTableView.DataKeyValues[dataItem.ItemIndex][dataItem.OwnerTableView.DataKeyNames[0]];
-                        //        Revision r = CntLainsaSci.GetRevision(id, ctx);
-                        //        if (r != null)
-                        //        {
-                        //            r.Programa = prog;
-                        //            r.Estado = "PROGRAMADA";
-                        //            prog.Revisions.Add(r);
-                        //            CntLainsaSci.AgruparCompanyeros(r, prog, ctx);
-                        //        }
-                        //    }
-                        //}
                         CntLainsaSci.EliminarProgramadasInferiores(prog);
                         CntLainsaSci.ProgramarSustituciones(prog, ctx);
                         if (!CntLainsaSci.ProgramaMezclado(prog))
@@ -256,14 +233,23 @@ namespace LainsaSciWinWeb
                                 string url = String.Format("ProgramaForm.aspx?Caller=ProgramarGrid&ProgramaId={0}", prog.ProgramaId);
                                 jCommand = String.Format("openOutSide('{0}','{1}');", url, "ProgramaForm");
                                 RadAjaxManager1.ResponseScripts.Add(jCommand);
+                                Session["selectedItems"] = null;
                             }
                         }
                         else
                         {
-                            RadNotification1.Text = "No debe mezclar instalaciones";
-                            RadNotification1.Show();
+                            // RadNotification1.Text = "No debe mezclar instalaciones";
+                            // RadNotification1.Show();
+
+                            // -- FALCKDBM-11
+
+                            if (!firstTime)
+                            {
+                                jCommand = String.Format("mensAlert('{0}');", prog.ProgramaId);
+                                RadAjaxManager1.ResponseScripts.Add(jCommand);
+                            }
+
                         }
-                        Session["selectedItems"] = null;
                         RefreshGrid(true);
                         break;
                     case "Delete":
@@ -282,6 +268,7 @@ namespace LainsaSciWinWeb
                             CntLainsaSci.CTXGuardar(ctx);
 
                             RefreshGrid(true);
+                            
                         }
                         catch (Exception ex)
                         {
@@ -359,6 +346,51 @@ namespace LainsaSciWinWeb
         }
         #endregion
         #region Auxiliary
+        protected void CreateProgram()
+        {
+            string jCommand = "";
+            ArrayList selectedItems = GetSelectedItems();
+            Int16 stackIndex;
+            for (stackIndex = 0; stackIndex <= selectedItems.Count - 1; stackIndex++)
+            {
+                string curItem = selectedItems[stackIndex].ToString();
+                if (firstTime)
+                {
+                    // Creamos el programa
+                    prog = new Programa();
+                    prog.Usuario = usuario;
+                    prog.Comentarios = String.Format("Programación creada el {0:dd/MM/yyyy hh:mm:ss}", DateTime.Now);
+                    firstTime = false;
+                }
+                int id = int.Parse(curItem);
+                Revision r = CntLainsaSci.GetRevision(id, ctx);
+                if (r != null)
+                {
+                    r.Programa = prog;
+                    r.Estado = "PROGRAMADA";
+                    prog.Revisions.Add(r);
+                    CntLainsaSci.AgruparCompanyeros(r, prog, ctx);
+                    //Las revisiones de los accesorios con la misma plantilla formarán parte del nuevo Programa
+                    foreach (Dispositivo d in r.Dispositivo.Accesorios)
+                        foreach (Revision rev in d.Revisiones)
+                            if (rev.PlantillaRevision.PlantillaId == r.PlantillaRevision.PlantillaId)
+                            {
+                                rev.Programa = prog;
+                                rev.Estado = "PROGRAMADA";
+                                prog.Revisions.Add(rev);
+                                CntLainsaSci.AgruparCompanyeros(rev, prog, ctx);
+                            }
+                }
+            }
+            CntLainsaSci.EliminarProgramadasInferiores(prog);
+            CntLainsaSci.ProgramarSustituciones(prog, ctx);
+            CntLainsaSci.CTXGuardar(ctx);
+            string url = String.Format("ProgramaForm.aspx?Caller=ProgramarGrid&ProgramaId={0}", prog.ProgramaId);
+            jCommand = String.Format("openOutSide('{0}','{1}');", url, "ProgramaForm");
+            RadAjaxManager1.ResponseScripts.Add(jCommand);
+            Session["selectedItems"] = null;
+        }
+
         protected ArrayList GetSelectedItems()
         {
             ArrayList selectedItems;
@@ -388,10 +420,17 @@ namespace LainsaSciWinWeb
 
         protected void RadAjaxManager1_AjaxRequest(object sender, AjaxRequestEventArgs e)
         {
-            if (e.Argument == "new")
-                RadGrid1.CurrentPageIndex = RadGrid1.PageCount - 1;
-            RefreshGrid(true);
-            RadAjaxManager1.ResponseScripts.Add("resizeWindow();");
+            if (e.Argument == "mixInst")
+            {
+                CreateProgram();                
+            }
+            else
+            {
+                if (e.Argument == "new")
+                    RadGrid1.CurrentPageIndex = RadGrid1.PageCount - 1;
+                RefreshGrid(true);
+                RadAjaxManager1.ResponseScripts.Add("resizeWindow();");
+            }
         }
 
         protected void RadGrid1_PageIndexChanged(object sender, GridPageChangedEventArgs e)

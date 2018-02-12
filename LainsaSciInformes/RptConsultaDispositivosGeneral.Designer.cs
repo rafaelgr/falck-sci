@@ -56,7 +56,7 @@ namespace LainsaSciInformes
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(8.6608314514160156D), Telerik.Reporting.Drawing.Unit.Inch(0.099999986588954926D));
+            this.pictureBox1.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(7.9020447731018066D), Telerik.Reporting.Drawing.Unit.Inch(0.099999986588954926D));
             this.pictureBox1.MimeType = "image/jpeg";
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(2.2298812866210938D), Telerik.Reporting.Drawing.Unit.Inch(0.60000002384185791D));
@@ -65,9 +65,9 @@ namespace LainsaSciInformes
             // 
             // reportNameTextBox
             // 
-            this.reportNameTextBox.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(0D), Telerik.Reporting.Drawing.Unit.Inch(0.006249984260648489D));
+            this.reportNameTextBox.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(0.11674690246582031D), Telerik.Reporting.Drawing.Unit.Inch(0.099999986588954926D));
             this.reportNameTextBox.Name = "reportNameTextBox";
-            this.reportNameTextBox.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Mm(215.90000915527344D), Telerik.Reporting.Drawing.Unit.Mm(20.318002700805664D));
+            this.reportNameTextBox.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Mm(167.21463012695313D), Telerik.Reporting.Drawing.Unit.Mm(17.936752319335938D));
             this.reportNameTextBox.Style.BorderColor.Default = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(128)))));
             this.reportNameTextBox.Style.BorderStyle.Default = Telerik.Reporting.Drawing.BorderType.Solid;
             this.reportNameTextBox.Style.BorderWidth.Default = Telerik.Reporting.Drawing.Unit.Pixel(1D);
@@ -81,9 +81,9 @@ namespace LainsaSciInformes
             // nombreCaptionTextBox
             // 
             this.nombreCaptionTextBox.CanGrow = true;
-            this.nombreCaptionTextBox.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(3.9418537198798731E-05D), Telerik.Reporting.Drawing.Unit.Inch(1.1200000047683716D));
+            this.nombreCaptionTextBox.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(0.11674690246582031D), Telerik.Reporting.Drawing.Unit.Inch(1.1200000047683716D));
             this.nombreCaptionTextBox.Name = "nombreCaptionTextBox";
-            this.nombreCaptionTextBox.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.8184523582458496D), Telerik.Reporting.Drawing.Unit.Inch(0.48000004887580872D));
+            this.nombreCaptionTextBox.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.1832531690597534D), Telerik.Reporting.Drawing.Unit.Inch(0.48000004887580872D));
             this.nombreCaptionTextBox.Style.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(243)))), ((int)(((byte)(254)))));
             this.nombreCaptionTextBox.Style.BorderColor.Default = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(128)))));
             this.nombreCaptionTextBox.Style.BorderStyle.Default = Telerik.Reporting.Drawing.BorderType.Solid;
@@ -97,9 +97,9 @@ namespace LainsaSciInformes
             // numero_industriaCaptionTextBox
             // 
             this.numero_industriaCaptionTextBox.CanGrow = true;
-            this.numero_industriaCaptionTextBox.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(1.8125394582748413D), Telerik.Reporting.Drawing.Unit.Inch(1.1200000047683716D));
+            this.numero_industriaCaptionTextBox.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(1.3000788688659668D), Telerik.Reporting.Drawing.Unit.Inch(1.1200000047683716D));
             this.numero_industriaCaptionTextBox.Name = "numero_industriaCaptionTextBox";
-            this.numero_industriaCaptionTextBox.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(0.88746070861816406D), Telerik.Reporting.Drawing.Unit.Inch(0.48000004887580872D));
+            this.numero_industriaCaptionTextBox.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(0.92662984132766724D), Telerik.Reporting.Drawing.Unit.Inch(0.48000004887580872D));
             this.numero_industriaCaptionTextBox.Style.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(243)))), ((int)(((byte)(254)))));
             this.numero_industriaCaptionTextBox.Style.BorderColor.Default = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(128)))));
             this.numero_industriaCaptionTextBox.Style.BorderStyle.Default = Telerik.Reporting.Drawing.BorderType.Solid;
@@ -112,7 +112,7 @@ namespace LainsaSciInformes
             // clienteCaptionTextBox
             // 
             this.clienteCaptionTextBox.CanGrow = true;
-            this.clienteCaptionTextBox.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(2.6979560852050781D), Telerik.Reporting.Drawing.Unit.Inch(1.1200000047683716D));
+            this.clienteCaptionTextBox.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(2.2267875671386719D), Telerik.Reporting.Drawing.Unit.Inch(1.1200000047683716D));
             this.clienteCaptionTextBox.Name = "clienteCaptionTextBox";
             this.clienteCaptionTextBox.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.4999213218688965D), Telerik.Reporting.Drawing.Unit.Inch(0.48000004887580872D));
             this.clienteCaptionTextBox.Style.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(243)))), ((int)(((byte)(254)))));
@@ -127,7 +127,7 @@ namespace LainsaSciInformes
             // instalacionCaptionTextBox
             // 
             this.instalacionCaptionTextBox.CanGrow = true;
-            this.instalacionCaptionTextBox.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(4.1979560852050781D), Telerik.Reporting.Drawing.Unit.Inch(1.1200000047683716D));
+            this.instalacionCaptionTextBox.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(3.7267875671386719D), Telerik.Reporting.Drawing.Unit.Inch(1.1200000047683716D));
             this.instalacionCaptionTextBox.Name = "instalacionCaptionTextBox";
             this.instalacionCaptionTextBox.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.2999211549758911D), Telerik.Reporting.Drawing.Unit.Inch(0.48000004887580872D));
             this.instalacionCaptionTextBox.Style.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(243)))), ((int)(((byte)(254)))));
@@ -142,7 +142,7 @@ namespace LainsaSciInformes
             // tipo_dispositivoCaptionTextBox
             // 
             this.tipo_dispositivoCaptionTextBox.CanGrow = true;
-            this.tipo_dispositivoCaptionTextBox.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(5.5000395774841309D), Telerik.Reporting.Drawing.Unit.Inch(1.1200000047683716D));
+            this.tipo_dispositivoCaptionTextBox.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(5.026787281036377D), Telerik.Reporting.Drawing.Unit.Inch(1.1200000047683716D));
             this.tipo_dispositivoCaptionTextBox.Name = "tipo_dispositivoCaptionTextBox";
             this.tipo_dispositivoCaptionTextBox.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.1040879487991333D), Telerik.Reporting.Drawing.Unit.Inch(0.48000004887580872D));
             this.tipo_dispositivoCaptionTextBox.Style.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(243)))), ((int)(((byte)(254)))));
@@ -152,12 +152,12 @@ namespace LainsaSciInformes
             this.tipo_dispositivoCaptionTextBox.Style.Font.Name = "Arial";
             this.tipo_dispositivoCaptionTextBox.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.tipo_dispositivoCaptionTextBox.StyleName = "Caption";
-            this.tipo_dispositivoCaptionTextBox.Value = "tipo de dispositivo";
+            this.tipo_dispositivoCaptionTextBox.Value = "Tipo";
             // 
             // textBox2
             // 
             this.textBox2.CanGrow = true;
-            this.textBox2.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(6.6042060852050781D), Telerik.Reporting.Drawing.Unit.Inch(1.1200000047683716D));
+            this.textBox2.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(6.1309542655944824D), Telerik.Reporting.Drawing.Unit.Inch(1.1200000047683716D));
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.1249619722366333D), Telerik.Reporting.Drawing.Unit.Inch(0.48000004887580872D));
             this.textBox2.Style.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(243)))), ((int)(((byte)(254)))));
@@ -172,7 +172,7 @@ namespace LainsaSciInformes
             // posicionCaptionTextBox
             // 
             this.posicionCaptionTextBox.CanGrow = true;
-            this.posicionCaptionTextBox.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(7.7292060852050781D), Telerik.Reporting.Drawing.Unit.Inch(1.1200000047683716D));
+            this.posicionCaptionTextBox.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(7.25599479675293D), Telerik.Reporting.Drawing.Unit.Inch(1.1200000047683716D));
             this.posicionCaptionTextBox.Name = "posicionCaptionTextBox";
             this.posicionCaptionTextBox.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(0.999921977519989D), Telerik.Reporting.Drawing.Unit.Inch(0.48000004887580872D));
             this.posicionCaptionTextBox.Style.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(243)))), ((int)(((byte)(254)))));
@@ -187,9 +187,9 @@ namespace LainsaSciInformes
             // fecha_caducidadCaptionTextBox
             // 
             this.fecha_caducidadCaptionTextBox.CanGrow = true;
-            this.fecha_caducidadCaptionTextBox.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(8.7292060852050781D), Telerik.Reporting.Drawing.Unit.Inch(1.1200000047683716D));
+            this.fecha_caducidadCaptionTextBox.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(8.2559957504272461D), Telerik.Reporting.Drawing.Unit.Inch(1.1200000047683716D));
             this.fecha_caducidadCaptionTextBox.Name = "fecha_caducidadCaptionTextBox";
-            this.fecha_caducidadCaptionTextBox.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.029960036277771D), Telerik.Reporting.Drawing.Unit.Inch(0.47999998927116394D));
+            this.fecha_caducidadCaptionTextBox.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(0.72996014356613159D), Telerik.Reporting.Drawing.Unit.Inch(0.47999998927116394D));
             this.fecha_caducidadCaptionTextBox.Style.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(243)))), ((int)(((byte)(254)))));
             this.fecha_caducidadCaptionTextBox.Style.BorderColor.Default = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(128)))));
             this.fecha_caducidadCaptionTextBox.Style.BorderStyle.Default = Telerik.Reporting.Drawing.BorderType.Solid;
@@ -197,14 +197,14 @@ namespace LainsaSciInformes
             this.fecha_caducidadCaptionTextBox.Style.Font.Name = "Arial";
             this.fecha_caducidadCaptionTextBox.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.fecha_caducidadCaptionTextBox.StyleName = "Caption";
-            this.fecha_caducidadCaptionTextBox.Value = "fecha de caducidad";
+            this.fecha_caducidadCaptionTextBox.Value = "Fecha Cad.";
             // 
             // textBox5
             // 
             this.textBox5.CanGrow = true;
-            this.textBox5.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(9.7500391006469727D), Telerik.Reporting.Drawing.Unit.Inch(1.1200000047683716D));
+            this.textBox5.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(8.9860343933105469D), Telerik.Reporting.Drawing.Unit.Inch(1.1200000047683716D));
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.1406739950180054D), Telerik.Reporting.Drawing.Unit.Inch(0.47999998927116394D));
+            this.textBox5.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.4654319286346436D), Telerik.Reporting.Drawing.Unit.Inch(0.47999998927116394D));
             this.textBox5.Style.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(243)))), ((int)(((byte)(254)))));
             this.textBox5.Style.BorderColor.Default = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(128)))));
             this.textBox5.Style.BorderStyle.Default = Telerik.Reporting.Drawing.BorderType.Solid;
@@ -212,7 +212,7 @@ namespace LainsaSciInformes
             this.textBox5.Style.Font.Name = "Arial";
             this.textBox5.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.textBox5.StyleName = "Caption";
-            this.textBox5.Value = "observaciones";
+            this.textBox5.Value = "Observaciones";
             // 
             // detail
             // 
@@ -232,9 +232,9 @@ namespace LainsaSciInformes
             // textBox4
             // 
             this.textBox4.CanGrow = true;
-            this.textBox4.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(9.7500391006469727D), Telerik.Reporting.Drawing.Unit.Inch(3.9418537198798731E-05D));
+            this.textBox4.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(8.9860343933105469D), Telerik.Reporting.Drawing.Unit.Inch(3.9418537198798731E-05D));
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.1406728029251099D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
+            this.textBox4.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.4654332399368286D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
             this.textBox4.Style.Font.Name = "Arial";
             this.textBox4.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.textBox4.StyleName = "Data";
@@ -243,7 +243,7 @@ namespace LainsaSciInformes
             // textBox3
             // 
             this.textBox3.CanGrow = true;
-            this.textBox3.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(6.6042060852050781D), Telerik.Reporting.Drawing.Unit.Inch(3.9418537198798731E-05D));
+            this.textBox3.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(6.1309542655944824D), Telerik.Reporting.Drawing.Unit.Inch(3.9418537198798731E-05D));
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.1249619722366333D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
             this.textBox3.Style.Font.Name = "Arial";
@@ -256,7 +256,7 @@ namespace LainsaSciInformes
             this.nombreDataTextBox.CanGrow = true;
             this.nombreDataTextBox.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(3.9577484130859375E-05D), Telerik.Reporting.Drawing.Unit.Inch(3.9418537198798731E-05D));
             this.nombreDataTextBox.Name = "nombreDataTextBox";
-            this.nombreDataTextBox.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.8124212026596069D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
+            this.nombreDataTextBox.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.2999604940414429D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
             this.nombreDataTextBox.Style.Font.Name = "Arial";
             this.nombreDataTextBox.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.nombreDataTextBox.StyleName = "Data";
@@ -265,9 +265,9 @@ namespace LainsaSciInformes
             // numero_industriaDataTextBox
             // 
             this.numero_industriaDataTextBox.CanGrow = true;
-            this.numero_industriaDataTextBox.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(1.8125395774841309D), Telerik.Reporting.Drawing.Unit.Inch(3.9418537198798731E-05D));
+            this.numero_industriaDataTextBox.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(1.3000788688659668D), Telerik.Reporting.Drawing.Unit.Inch(3.9418537198798731E-05D));
             this.numero_industriaDataTextBox.Name = "numero_industriaDataTextBox";
-            this.numero_industriaDataTextBox.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(0.88746088743209839D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
+            this.numero_industriaDataTextBox.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(0.92663002014160156D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
             this.numero_industriaDataTextBox.Style.Font.Name = "Arial";
             this.numero_industriaDataTextBox.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.numero_industriaDataTextBox.StyleName = "Data";
@@ -276,9 +276,9 @@ namespace LainsaSciInformes
             // clienteDataTextBox
             // 
             this.clienteDataTextBox.CanGrow = true;
-            this.clienteDataTextBox.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(2.6979560852050781D), Telerik.Reporting.Drawing.Unit.Inch(3.9418537198798731E-05D));
+            this.clienteDataTextBox.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(2.284745454788208D), Telerik.Reporting.Drawing.Unit.Inch(3.9418537198798731E-05D));
             this.clienteDataTextBox.Name = "clienteDataTextBox";
-            this.clienteDataTextBox.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.4999213218688965D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
+            this.clienteDataTextBox.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.4419633150100708D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
             this.clienteDataTextBox.Style.Font.Name = "Arial";
             this.clienteDataTextBox.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.clienteDataTextBox.StyleName = "Data";
@@ -287,7 +287,7 @@ namespace LainsaSciInformes
             // instalacionDataTextBox
             // 
             this.instalacionDataTextBox.CanGrow = true;
-            this.instalacionDataTextBox.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(4.1979560852050781D), Telerik.Reporting.Drawing.Unit.Inch(3.9418537198798731E-05D));
+            this.instalacionDataTextBox.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(3.7267875671386719D), Telerik.Reporting.Drawing.Unit.Inch(3.9418537198798731E-05D));
             this.instalacionDataTextBox.Name = "instalacionDataTextBox";
             this.instalacionDataTextBox.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.2999210357666016D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
             this.instalacionDataTextBox.Style.Font.Name = "Arial";
@@ -298,9 +298,9 @@ namespace LainsaSciInformes
             // tipo_dispositivoDataTextBox
             // 
             this.tipo_dispositivoDataTextBox.CanGrow = true;
-            this.tipo_dispositivoDataTextBox.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(5.5000395774841309D), Telerik.Reporting.Drawing.Unit.Inch(3.9418537198798731E-05D));
+            this.tipo_dispositivoDataTextBox.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(5.0847454071044922D), Telerik.Reporting.Drawing.Unit.Inch(3.9418537198798731E-05D));
             this.tipo_dispositivoDataTextBox.Name = "tipo_dispositivoDataTextBox";
-            this.tipo_dispositivoDataTextBox.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.1040879487991333D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
+            this.tipo_dispositivoDataTextBox.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.0461299419403076D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
             this.tipo_dispositivoDataTextBox.Style.Font.Name = "Arial";
             this.tipo_dispositivoDataTextBox.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.tipo_dispositivoDataTextBox.StyleName = "Data";
@@ -309,9 +309,9 @@ namespace LainsaSciInformes
             // posicionDataTextBox
             // 
             this.posicionDataTextBox.CanGrow = true;
-            this.posicionDataTextBox.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(7.7292060852050781D), Telerik.Reporting.Drawing.Unit.Inch(3.9418537198798731E-05D));
+            this.posicionDataTextBox.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(7.28724479675293D), Telerik.Reporting.Drawing.Unit.Inch(3.9418537198798731E-05D));
             this.posicionDataTextBox.Name = "posicionDataTextBox";
-            this.posicionDataTextBox.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(0.999921977519989D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
+            this.posicionDataTextBox.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(0.968671977519989D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
             this.posicionDataTextBox.Style.Font.Name = "Arial";
             this.posicionDataTextBox.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.posicionDataTextBox.StyleName = "Data";
@@ -320,9 +320,9 @@ namespace LainsaSciInformes
             // fecha_caducidadDataTextBox
             // 
             this.fecha_caducidadDataTextBox.CanGrow = true;
-            this.fecha_caducidadDataTextBox.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(8.7292060852050781D), Telerik.Reporting.Drawing.Unit.Inch(3.9418537198798731E-05D));
+            this.fecha_caducidadDataTextBox.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(8.2559957504272461D), Telerik.Reporting.Drawing.Unit.Inch(3.9418537198798731E-05D));
             this.fecha_caducidadDataTextBox.Name = "fecha_caducidadDataTextBox";
-            this.fecha_caducidadDataTextBox.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.0299601554870606D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
+            this.fecha_caducidadDataTextBox.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(0.72996026277542114D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
             this.fecha_caducidadDataTextBox.Style.Font.Name = "Arial";
             this.fecha_caducidadDataTextBox.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.fecha_caducidadDataTextBox.StyleName = "Data";
@@ -338,9 +338,9 @@ namespace LainsaSciInformes
             // 
             // pageInfoTextBox
             // 
-            this.pageInfoTextBox.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(7.9020447731018066D), Telerik.Reporting.Drawing.Unit.Inch(3.9418537198798731E-05D));
+            this.pageInfoTextBox.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(7.7535114288330078D), Telerik.Reporting.Drawing.Unit.Inch(3.9418537198798731E-05D));
             this.pageInfoTextBox.Name = "pageInfoTextBox";
-            this.pageInfoTextBox.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(3.1979167461395264D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
+            this.pageInfoTextBox.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(2.6979560852050781D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
             this.pageInfoTextBox.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Right;
             this.pageInfoTextBox.StyleName = "PageInfo";
             this.pageInfoTextBox.Value = "=PageNumber";
@@ -359,14 +359,12 @@ namespace LainsaSciInformes
             this.pageHeaderSection1,
             this.detail,
             this.pageFooterSection1});
+            this.Name = "RptConsultaDispositivosGeneral";
             this.PageSettings.Landscape = true;
-            this.PageSettings.Margins.Bottom = Telerik.Reporting.Drawing.Unit.Inch(1D);
-            this.PageSettings.Margins.Left = Telerik.Reporting.Drawing.Unit.Inch(1D);
-            this.PageSettings.Margins.Right = Telerik.Reporting.Drawing.Unit.Inch(1D);
-            this.PageSettings.Margins.Top = Telerik.Reporting.Drawing.Unit.Inch(1D);
+            this.PageSettings.Margins = new Telerik.Reporting.Drawing.MarginsU(Telerik.Reporting.Drawing.Unit.Inch(0D), Telerik.Reporting.Drawing.Unit.Inch(0D), Telerik.Reporting.Drawing.Unit.Inch(0D), Telerik.Reporting.Drawing.Unit.Inch(0D));
             this.PageSettings.PaperKind = System.Drawing.Printing.PaperKind.A4;
             this.Style.BackgroundColor = System.Drawing.Color.White;
-            this.Width = Telerik.Reporting.Drawing.Unit.Inch(11.100001335144043D);
+            this.Width = Telerik.Reporting.Drawing.Unit.Inch(10.5D);
             this.NeedDataSource += new System.EventHandler(this.RptConsultaDispositivosGeneral_NeedDataSource_1);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 

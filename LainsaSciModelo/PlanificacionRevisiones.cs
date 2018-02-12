@@ -350,7 +350,11 @@ namespace LainsaSciModelo
                             {
                                 if (r.Dispositivo.Instalacion.InstalacionId == i.InstalacionId)
                                 {
-                                    l.Add(p);
+                                    // antes de agregarlo hay que controlar que el programa no está ya en la lista.
+                                    if (!l.Contains(p))
+                                    {
+                                        l.Add(p);
+                                    }
                                 }
                             }
                         }

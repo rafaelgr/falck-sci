@@ -10,6 +10,9 @@ namespace LainsaSciInformes
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RptConsultaDispositivos));
+            Telerik.Reporting.InstanceReportSource instanceReportSource1 = new Telerik.Reporting.InstanceReportSource();
+            Telerik.Reporting.InstanceReportSource instanceReportSource2 = new Telerik.Reporting.InstanceReportSource();
+            Telerik.Reporting.Group group1 = new Telerik.Reporting.Group();
             this.pageHeaderSection1 = new Telerik.Reporting.PageHeaderSection();
             this.reportNameTextBox = new Telerik.Reporting.TextBox();
             this.pictureBox1 = new Telerik.Reporting.PictureBox();
@@ -40,11 +43,10 @@ namespace LainsaSciInformes
             this.textBox3 = new Telerik.Reporting.TextBox();
             this.textBox4 = new Telerik.Reporting.TextBox();
             this.textBox5 = new Telerik.Reporting.TextBox();
-            this.group1 = new Telerik.Reporting.Group();
             this.groupFooterSection1 = new Telerik.Reporting.GroupFooterSection();
             this.groupHeaderSection1 = new Telerik.Reporting.GroupHeaderSection();
-            this.textBox6 = new Telerik.Reporting.TextBox();
             this.textBox7 = new Telerik.Reporting.TextBox();
+            this.textBox6 = new Telerik.Reporting.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.rptResumenRevision1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rptRevisionDispositivo1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -74,7 +76,7 @@ namespace LainsaSciInformes
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(8.3000001907348633D), Telerik.Reporting.Drawing.Unit.Inch(0.099999986588954926D));
+            this.pictureBox1.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(9.0692930221557617D), Telerik.Reporting.Drawing.Unit.Inch(0.099999986588954926D));
             this.pictureBox1.MimeType = "image/jpeg";
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(2.2298812866210938D), Telerik.Reporting.Drawing.Unit.Inch(0.60000002384185791D));
@@ -96,8 +98,9 @@ namespace LainsaSciInformes
             // 
             this.subReport1.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Mm(20.319999694824219D), Telerik.Reporting.Drawing.Unit.Mm(0.00099719362333416939D));
             this.subReport1.Name = "subReport1";
-            this.subReport1.Parameters.Add(new Telerik.Reporting.Parameter("dispositivo", "=ID"));
-            this.subReport1.ReportSource = this.rptResumenRevision1;
+            instanceReportSource1.Parameters.Add(new Telerik.Reporting.Parameter("dispositivo", "=ID"));
+            instanceReportSource1.ReportDocument = this.rptResumenRevision1;
+            this.subReport1.ReportSource = instanceReportSource1;
             this.subReport1.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Mm(167.10981750488281D), Telerik.Reporting.Drawing.Unit.Mm(10.160001754760742D));
             // 
             // rptResumenRevision1
@@ -108,8 +111,9 @@ namespace LainsaSciInformes
             // 
             this.subReport2.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Mm(20.319999694824219D), Telerik.Reporting.Drawing.Unit.Mm(10.163005828857422D));
             this.subReport2.Name = "subReport2";
-            this.subReport2.Parameters.Add(new Telerik.Reporting.Parameter("dispositivo", "=ID"));
-            this.subReport2.ReportSource = this.rptRevisionDispositivo1;
+            instanceReportSource2.Parameters.Add(new Telerik.Reporting.Parameter("dispositivo", "=ID"));
+            instanceReportSource2.ReportDocument = this.rptRevisionDispositivo1;
+            this.subReport2.ReportSource = instanceReportSource2;
             this.subReport2.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Mm(20.319995880126953D), Telerik.Reporting.Drawing.Unit.Mm(5.0800032615661621D));
             // 
             // rptRevisionDispositivo1
@@ -384,14 +388,6 @@ namespace LainsaSciInformes
             this.textBox5.StyleName = "Caption";
             this.textBox5.Value = "observaciones";
             // 
-            // group1
-            // 
-            this.group1.GroupFooter = this.groupFooterSection1;
-            this.group1.GroupHeader = this.groupHeaderSection1;
-            this.group1.Groupings.AddRange(new Telerik.Reporting.Grouping[] {
-            new Telerik.Reporting.Grouping("=ID")});
-            this.group1.Name = "group1";
-            // 
             // groupFooterSection1
             // 
             this.groupFooterSection1.Height = Telerik.Reporting.Drawing.Unit.Inch(0.30000019073486328D);
@@ -424,17 +420,6 @@ namespace LainsaSciInformes
             this.textBox6});
             this.groupHeaderSection1.Name = "groupHeaderSection1";
             // 
-            // textBox6
-            // 
-            this.textBox6.CanGrow = true;
-            this.textBox6.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(9.409245491027832D), Telerik.Reporting.Drawing.Unit.Inch(0.60000008344650269D));
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(0.82796174287796021D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
-            this.textBox6.Style.Font.Name = "Arial";
-            this.textBox6.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
-            this.textBox6.StyleName = "Data";
-            this.textBox6.Value = "=Operativo";
-            // 
             // textBox7
             // 
             this.textBox7.CanGrow = true;
@@ -450,21 +435,34 @@ namespace LainsaSciInformes
             this.textBox7.StyleName = "Caption";
             this.textBox7.Value = "operativo";
             // 
+            // textBox6
+            // 
+            this.textBox6.CanGrow = true;
+            this.textBox6.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(9.409245491027832D), Telerik.Reporting.Drawing.Unit.Inch(0.60000008344650269D));
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(0.82796174287796021D), Telerik.Reporting.Drawing.Unit.Inch(0.20000000298023224D));
+            this.textBox6.Style.Font.Name = "Arial";
+            this.textBox6.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
+            this.textBox6.StyleName = "Data";
+            this.textBox6.Value = "=Operativo";
+            // 
             // RptConsultaDispositivos
             // 
+            group1.GroupFooter = this.groupFooterSection1;
+            group1.GroupHeader = this.groupHeaderSection1;
+            group1.Groupings.Add(new Telerik.Reporting.Grouping("=ID"));
+            group1.Name = "group1";
             this.Groups.AddRange(new Telerik.Reporting.Group[] {
-            this.group1});
+            group1});
             this.Items.AddRange(new Telerik.Reporting.ReportItemBase[] {
             this.groupHeaderSection1,
             this.groupFooterSection1,
             this.pageHeaderSection1,
             this.detail,
             this.pageFooterSection1});
+            this.Name = "RptConsultaDispositivos";
             this.PageSettings.Landscape = true;
-            this.PageSettings.Margins.Bottom = Telerik.Reporting.Drawing.Unit.Mm(0.5D);
-            this.PageSettings.Margins.Left = Telerik.Reporting.Drawing.Unit.Mm(0.5D);
-            this.PageSettings.Margins.Right = Telerik.Reporting.Drawing.Unit.Mm(0.5D);
-            this.PageSettings.Margins.Top = Telerik.Reporting.Drawing.Unit.Mm(0.5D);
+            this.PageSettings.Margins = new Telerik.Reporting.Drawing.MarginsU(Telerik.Reporting.Drawing.Unit.Mm(0.5D), Telerik.Reporting.Drawing.Unit.Mm(0.5D), Telerik.Reporting.Drawing.Unit.Mm(0.5D), Telerik.Reporting.Drawing.Unit.Mm(0.5D));
             this.PageSettings.PaperKind = System.Drawing.Printing.PaperKind.A4;
             this.UnitOfMeasure = Telerik.Reporting.Drawing.UnitType.Mm;
             this.Width = Telerik.Reporting.Drawing.Unit.Inch(11.40000057220459D);

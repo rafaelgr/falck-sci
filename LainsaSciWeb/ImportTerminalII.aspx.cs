@@ -22,7 +22,7 @@ namespace LainsaSciWinWeb
         private static string path = null;
         private static string archivo = null;
         private CargaTerminales terminal = null;
-        private FileInfo file;
+        private FileInfo file = null;
         private Empresa empresa;
         private StringBuilder pantalla;
         
@@ -34,10 +34,11 @@ namespace LainsaSciWinWeb
         {
             ctx = new LainsaSci("LainsaSciCTX"); // el conector figura en el config
             path = this.MapPath("/");
-            UsuarioCorrecto(); // control de usuario logado
+            //UsuarioCorrecto(); // control de usuario logado
             // control de skin
-            if (Session["Skin"] != null) RadSkinManager1.Skin = Session["Skin"].ToString();
-
+            if (Session["Skin"] != null)
+                RadSkinManager1.Skin = Session["Skin"].ToString();
+            //RadUpload2.TemporaryFileExpiration = new TimeSpan(30, 0, 0, 0);
         }
         
         protected void Page_Load(object sender, EventArgs e)
@@ -47,6 +48,12 @@ namespace LainsaSciWinWeb
                 //RadProgressArea1.Localization.UploadedFiles = "Registro procesado: ";
                 //RadProgressArea1.Localization.CurrentFileName = "Registro: ";
                 //RadProgressArea1.Localization.TotalFiles = "Total registros:";
+                //string path = path = this.MapPath("/") + "TermFiles\\";
+                //UsuarioCorrecto(); // control de usuario logado
+                //foreach (string f in Directory.EnumerateFiles(path, usuario.Login + "*"))
+                //{
+                //    File.Delete(f);
+                //}
             }
         }
         
@@ -209,11 +216,12 @@ namespace LainsaSciWinWeb
                         // comprobar que no se ha dado de alta previamente
                         // es el caso de recarga del mismo fichero
                         Incidencia inci = (from i in ctx.Incidencias
-                                           where i.Dispositivo.DispositivoId == ti.TDispositivo.DispositivoId
-                                           && i.FechaApertura == ti.FechaApertura
-                                           && i.Comentarios == ti.Comentarios
+                                           where i.Dispositivo.DispositivoId == ti.TDispositivo.DispositivoId &&
+                                                 i.FechaApertura == ti.FechaApertura &&
+                                                 i.Comentarios == ti.Comentarios
                                            select i).FirstOrDefault<Incidencia>();
-                        if (inci != null) break;
+                        if (inci != null)
+                            break;
                         incidencia = new Incidencia();
                         incidencia.FechaApertura = ti.FechaApertura;
                         incidencia.FechaPrevista = ti.FechaPrevista;
@@ -267,26 +275,29 @@ namespace LainsaSciWinWeb
                 ctx.SaveChanges();
             }
         }
-
+        
         // 
         private void GuardarIncidenciaEvolucions(SqlCeConnection conn, LainsaSci ctx)
         {
             IList<TIncidenciaEvolucion> ltie = CntSciTerminal.GetTIncidenciaEvolucions(conn);
             foreach (TIncidenciaEvolucion tie in ltie)
             {
-                if (tie.Abm == 0) continue; // no cambiada
-                if (tie.Incidencia.Abm == 1) continue; // las evoluciones de las incidencias creadas ya han sido procesadas (GuardarIncidencias)
+                if (tie.Abm == 0)
+                    continue; // no cambiada
+                if (tie.Incidencia.Abm == 1)
+                    continue; // las evoluciones de las incidencias creadas ya han sido procesadas (GuardarIncidencias)
                 switch (tie.Abm)
                 {
                     case 1:
                         // alta
                         // primero evitar un doble procesamiento
                         IncidenciaEvolucion ie1 = (from ine in ctx.IncidenciaEvolucions
-                                                   where ine.Incidencia.IncidenciaId == tie.Incidencia.IncidenciaId
-                                                   && ine.FechaEvolucion == tie.FechaEvolucion
-                                                   && ine.Comentarios == tie.Comentarios
+                                                   where ine.Incidencia.IncidenciaId == tie.Incidencia.IncidenciaId &&
+                                                         ine.FechaEvolucion == tie.FechaEvolucion &&
+                                                         ine.Comentarios == tie.Comentarios
                                                    select ine).FirstOrDefault<IncidenciaEvolucion>();
-                        if (ie1 != null) break; // la evolución entendemos que ya ha sido dada de alta
+                        if (ie1 != null)
+                            break; // la evolución entendemos que ya ha sido dada de alta
                         IncidenciaEvolucion ie = new IncidenciaEvolucion();
                         Incidencia i = CntLainsaSci.GetIncidencia(tie.Incidencia.IncidenciaId, ctx);
                         ie.Incidencia = i;
@@ -323,13 +334,14 @@ namespace LainsaSciWinWeb
                 ctx.SaveChanges();
             }
         }
-
+        
         private void GuardarIncidenciaEvolucions(TIncidencia ti, Incidencia inci, SqlCeConnection conn, LainsaSci ctx)
         {
             IList<TIncidenciaEvolucion> ltie = CntSciTerminal.GetTIncidenciaEvolucions(ti, conn);
             foreach (TIncidenciaEvolucion tie in ltie)
             {
-                if (tie.Abm == 0) continue; // no cambiada
+                if (tie.Abm == 0)
+                    continue; // no cambiada
                 switch (tie.Abm)
                 {
                     case 1:
@@ -482,7 +494,8 @@ namespace LainsaSciWinWeb
             foreach (TRevision rev in revisiones)
             {
                 // no tiene sentido modificar revisiones que no se han tocado
-                if (rev.Abm == 0) continue;
+                if (rev.Abm == 0)
+                    continue;
                 Revision revision = null;
                 var rs = (from d in ctx.Revisions
                           where d.RevisionId == rev.RevisionId
@@ -590,7 +603,8 @@ namespace LainsaSciWinWeb
                         Dispositivo dsp = (from d in ctx.Dispositivos
                                            where d.CodBarras == disp.CodBarras
                                            select d).FirstOrDefault<Dispositivo>();
-                        if (dsp != null) break; // ya existe han cargado dos veces el fichero.
+                        if (dsp != null)
+                            break; // ya existe han cargado dos veces el fichero.
                         dispositivo = new Dispositivo();
                         dispositivo.Nombre = disp.Nombre;
                         dispositivo.Instalacion = CntLainsaSci.GetInstalacion(disp.Instalacion.InstalacionId, ctx);
@@ -654,6 +668,7 @@ namespace LainsaSciWinWeb
             pantalla = new StringBuilder();
             pantalla.Append(String.Format("<b>Empresa: {0}</b><br/>", empresa.Nombre));
             //Incidencias
+            RadAjaxManager1.ResponseScripts.Add("callLog('obtener incidencias...');");
             IList<TIncidencia> incis = CntSciTerminal.GetTIncidencias(conn);
             pantalla.Append("--- INCIDENCIAS ------<br/>");
             if (incis != null)
@@ -663,7 +678,7 @@ namespace LainsaSciWinWeb
                     // solo las incidencias que se han creado modificado o eliminado en el terminal
                     if (inc.Abm != 0)
                     {
-                        pantalla.AppendLine(String.Format("ID:{6} Dispositivo: {0} ABM: {1} Apertura:{2:dd/MM/yyyy} Cierre:{3:dd/MM/yyyy} Prevista:{4:dd/MM/yyyy} Comentarios:{5} <br/>", 
+                        pantalla.AppendLine(String.Format("ID:{6} Dispositivo: {0} ABM: {1} Apertura:{2:dd/MM/yyyy} Cierre:{3:dd/MM/yyyy} Prevista:{4:dd/MM/yyyy} Comentarios:{5} <br/>",
                             inc.TDispositivo.Nombre,
                             inc.Abm,
                             inc.FechaApertura,
@@ -674,8 +689,9 @@ namespace LainsaSciWinWeb
                     }
                 }
             }
-
+            
             //Incidencias (Evolución)
+            RadAjaxManager1.ResponseScripts.Add("callLog('obtener evoluciones...');");
             IList<TIncidenciaEvolucion> incievos = CntSciTerminal.GetTIncidenciaEvolucions(conn);
             pantalla.Append("--- INCIDENCIAS EVOLUCIONES ------<br/>");
             if (incievos != null)
@@ -695,8 +711,9 @@ namespace LainsaSciWinWeb
                     }
                 }
             }
-
+            
             //Sustituciones
+            RadAjaxManager1.ResponseScripts.Add("callLog('obtener sustituciones...');");
             IList<TSustitucion> sustituciones = CntSciTerminal.GetTSustituciones(conn);
             pantalla.AppendLine("--- SUSTITUCIONES ------<br/>");
             if (sustituciones != null)
@@ -714,7 +731,7 @@ namespace LainsaSciWinWeb
                             {
                                 pantalla.AppendLine(String.Format("IDSUS:{0} Disp. Original:{1}  Disp. Sustituto:{2} Fecha:{3:dd/MM/yyyy} Comentarios:{4}<br/>",
                                     sust.SustitucionId,
-                                    sust.TDispositivoOriginal.Nombre, 
+                                    sust.TDispositivoOriginal.Nombre,
                                     sust.TDispositivoSustituto.Nombre,
                                     sust.Fecha,
                                     sust.Comentarios));
@@ -722,7 +739,7 @@ namespace LainsaSciWinWeb
                             else
                             {
                                 // Si el sustituto es nulo el problema es que no se ha hecho la sustitución
-                                pantalla.AppendLine(String.Format("IDSUS:{0} Disp. Original: {1} Fecha:{2:dd/MM/yyyy} Comentarios:{3} / Disp. ¿Sustitución no realizada?<br/>", 
+                                pantalla.AppendLine(String.Format("IDSUS:{0} Disp. Original: {1} Fecha:{2:dd/MM/yyyy} Comentarios:{3} / Disp. ¿Sustitución no realizada?<br/>",
                                     sust.SustitucionId,
                                     sust.TDispositivoOriginal.Nombre,
                                     sust.Fecha,
@@ -734,6 +751,7 @@ namespace LainsaSciWinWeb
             }
             
             //Revisiones
+            RadAjaxManager1.ResponseScripts.Add("callLog('obtener revisiones...');");
             IList<TRevision> revisiones = CntSciTerminal.GetTRevisiones(conn);
             pantalla.AppendLine("--- REVISIONES ------<br/>");
             if (revisiones != null)
@@ -748,10 +766,10 @@ namespace LainsaSciWinWeb
                             p_id = p.ProgramaId;
                         else
                             p_id = 0;
-                        pantalla.AppendLine(String.Format("IDREV:{0} Dispositivo:{1} Fecha:{2:dd/MM/yyyy} Programa: {3} ABM:{4} Estado:{5} Comentario:{6}<br/>", 
+                        pantalla.AppendLine(String.Format("IDREV:{0} Dispositivo:{1} Fecha:{2:dd/MM/yyyy} Programa: {3} ABM:{4} Estado:{5} Comentario:{6}<br/>",
                             rev.RevisionId,
-                            rev.NDispositivo, 
-                            rev.FechaRevision, 
+                            rev.NDispositivo,
+                            rev.FechaRevision,
                             p_id,
                             rev.Abm,
                             rev.Estado,
@@ -759,8 +777,9 @@ namespace LainsaSciWinWeb
                     }
                 }
             }
-
+            
             //Nuevos dispositivos
+            RadAjaxManager1.ResponseScripts.Add("callLog('obtener dispositivos...');");
             IList<TDispositivo> dispositivos = CntSciTerminal.GetTNuevosDispositivos(conn);
             pantalla.Append("--- NUEVOS DISPOSITIVOS ------<br/>");
             if (dispositivos != null)
@@ -776,7 +795,7 @@ namespace LainsaSciWinWeb
                         disp.CodBarras));
                 }
             }
-
+            
             if (conn.State != System.Data.ConnectionState.Closed)
                 conn.Close();
             
@@ -809,32 +828,46 @@ namespace LainsaSciWinWeb
         
         protected void RadAjaxManager1_AjaxRequest(object sender, AjaxRequestEventArgs e)
         {
-            // OJO: Auitar
-            //try
-            //{
-            file = new System.IO.FileInfo(lblPath.Text);
-            AppDomain.CurrentDomain.SetData("SQLServerCompactEditionUnderWebHosting", true);
-            SqlCeConnection conn = GetConnection();
-
-            RadProgress(RadProgressContext.Current, 1, 6, "GETEMPREWSA");
-            GetEmpresa(conn);
-            RadProgress(RadProgressContext.Current, 2, 6, "DISPOSITIVOS");
-            GuardarDispositivos(conn);
-            RadProgress(RadProgressContext.Current, 3, 6, "INCIDENCIAS");
-            GuardarIncidencias(conn, ctx);
-            RadProgress(RadProgressContext.Current, 4, 6, "INCIDENCIAS EVOLUCION");
-            GuardarIncidenciaEvolucions(conn, ctx);
-            // las revisiones las dejamos como estaban, al no incluir 
-            // ni altas ni bajas (deberían serguir funcionando bien).
-            RadProgress(RadProgressContext.Current, 5, 6, "REVISIONES");
-            GuardarRevisiones(conn);
-            //
-            RadProgress(RadProgressContext.Current, 6, 6, "SUSTITUCIONES");
-            GuardarSustituciones(conn, ctx);
-            ctx.SaveChanges();
-            if (conn.State != System.Data.ConnectionState.Closed)
-                conn.Close();
-            RadWindowManager1.RadAlert("Proceso de importación finalizado",null,null,"AVISO","noHaceNada");
+            if (e.Argument == "callback1")
+            {
+                file = new System.IO.FileInfo(lblPath.Text);
+                AppDomain.CurrentDomain.SetData("SQLServerCompactEditionUnderWebHosting", true);
+                SqlCeConnection conn = GetConnection();
+                
+                RadProgress(RadProgressContext.Current, 1, 6, "GETEMPREWSA");
+                GetEmpresa(conn);
+                RadProgress(RadProgressContext.Current, 2, 6, "DISPOSITIVOS");
+                GuardarDispositivos(conn);
+                RadProgress(RadProgressContext.Current, 3, 6, "INCIDENCIAS");
+                GuardarIncidencias(conn, ctx);
+                RadProgress(RadProgressContext.Current, 4, 6, "INCIDENCIAS EVOLUCION");
+                GuardarIncidenciaEvolucions(conn, ctx);
+                // las revisiones las dejamos como estaban, al no incluir 
+                // ni altas ni bajas (deberían serguir funcionando bien).
+                RadProgress(RadProgressContext.Current, 5, 6, "REVISIONES");
+                GuardarRevisiones(conn);
+                //
+                RadProgress(RadProgressContext.Current, 6, 6, "SUSTITUCIONES");
+                GuardarSustituciones(conn, ctx);
+                ctx.SaveChanges();
+                if (conn.State != System.Data.ConnectionState.Closed)
+                    conn.Close();
+                RadWindowManager1.RadAlert("Proceso de importación finalizado", null, null, "AVISO", "noHaceNada");
+            }
+            else
+            {
+                string fileName = e.Argument;
+                string path = path = this.MapPath("/") + "TermFiles\\";
+                string[] dirs = Directory.GetFiles(path, "*" + fileName);
+                if (dirs.Length > 0)
+                {
+                    string sourceFile = dirs[0];
+                    string destFile = path + fileName;
+                    System.IO.File.Copy(sourceFile, destFile, true);
+                    //file = new System.IO.FileInfo(destFile);
+                }
+                
+            }
         }
         
         #endregion
@@ -860,15 +893,16 @@ namespace LainsaSciWinWeb
             {
                 Label2.Visible = false;
                 UploadedFile f = RadUpload2.UploadedFiles[0];
-                string name =  f.GetName();
-                string p = String.Format("{0}.sdf", Path.GetTempFileName());
+                string name = f.GetName();
+                //string p = String.Format("{0}.sdf", Path.GetTempFileName());
+                string p = path + "TermFiles\\" + name;
                 //string name = String.Format(@"{0}.sdf", Guid.NewGuid());
                 //string filepath = string.Format("{0}BDII\\{1}", path, name);
                 lblPath.Text = p;
                 //if(File.Exists(filepath))
                 //   filepath = String.Format(@"{0}.sdf", Guid.NewGuid());
-                f.SaveAs(p);
-                
+                // f.SaveAs(p);
+                RadAjaxManager1.ResponseScripts.Add("callLog('obtener file...');");
                 file = new System.IO.FileInfo(p);
                 
                 AppDomain.CurrentDomain.SetData("SQLServerCompactEditionUnderWebHosting", true);
@@ -902,15 +936,19 @@ namespace LainsaSciWinWeb
                 {
                     e.IsValid = false;
                 }
+                else
+                {
+                }
             }
         }
-
+        
         protected void GuardarSustituciones(SqlCeConnection conn, LainsaSci ctx)
         {
             IList<TSustitucion> ltsu = CntSciTerminal.GetTSustituciones(conn);
             foreach (TSustitucion tsu in ltsu)
             {
-                if (tsu.Abm == 0) continue; // no hay cambios
+                if (tsu.Abm == 0)
+                    continue; // no hay cambios
                 Sustitucion sustitucion;
                 switch (tsu.Abm)
                 {
@@ -918,11 +956,12 @@ namespace LainsaSciWinWeb
                         // alta
                         // hay que controlar el doble procesamiento del fichero
                         Sustitucion sus = (from st in ctx.Sustitucions
-                                           where st.DispositivoOriginal.DispositivoId == tsu.TDispositivoOriginal.DispositivoId
-                                           && st.DispositivoSustituto.DispositivoId == tsu.TDispositivoSustituto.DispositivoId
-                                           && st.Fecha == tsu.Fecha
+                                           where st.DispositivoOriginal.DispositivoId == tsu.TDispositivoOriginal.DispositivoId &&
+                                                 st.DispositivoSustituto.DispositivoId == tsu.TDispositivoSustituto.DispositivoId &&
+                                                 st.Fecha == tsu.Fecha
                                            select st).FirstOrDefault<Sustitucion>();
-                        if (sus != null) break; // entendemos que ya se ha dado de alta en otro procesamiento.
+                        if (sus != null)
+                            break; // entendemos que ya se ha dado de alta en otro procesamiento.
                         sustitucion = new Sustitucion();
                         // atributos directos
                         sustitucion.Fecha = tsu.Fecha;
@@ -977,14 +1016,14 @@ namespace LainsaSciWinWeb
                 }
             }
         }
-
+        
         protected void ImportOK_Click(object sender, EventArgs e)
         {
             // abrir una conexion con la base de datos seleccionada
             file = new System.IO.FileInfo(lblPath.Text);
             AppDomain.CurrentDomain.SetData("SQLServerCompactEditionUnderWebHosting", true);
             SqlCeConnection conn = GetConnection();
-
+            
             RadProgress(RadProgressContext.Current, 1, 6, "GETEMPREWSA");
             GetEmpresa(conn);
             RadProgress(RadProgressContext.Current, 2, 6, "DISPOSITIVOS");

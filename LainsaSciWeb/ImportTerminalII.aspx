@@ -31,8 +31,18 @@ Inherits="LainsaSciWinWeb.ImportTerminalII" %>
                     function confirmCallBackFn(arg) {
                         //                radalert("<strong>radconfirm</strong> returned the following result: <h3 style='color: #ff0000;'>" + arg + "</h3>", null, null, "Result");
                         if (arg) {
-                            $find("<%= RadAjaxManager1.ClientID %>").ajaxRequest();
+                            $find("<%= RadAjaxManager1.ClientID %>").ajaxRequest('callback1');
                         } 
+                    }
+                    function onClientFileUploaded(sender, args) {
+                        //var contentType = args.get_fileInfo().ContentType;
+                        //alert(contentType);
+                        //console.log(args.get_fileInfo());
+                        $find("<%= RadAjaxManager1.ClientID %>").ajaxRequest(args.get_fileName());
+                    }
+
+                    function callLog(arg) {
+                        console.log(arg);
                     }
 
                 </script>
@@ -60,8 +70,8 @@ Inherits="LainsaSciWinWeb.ImportTerminalII" %>
                             <td>
 
                                 <telerik:RadAsyncUpload ID="RadUpload2" runat="server" MaxFileInputsCount="1" AllowedFileExtensions=".sdf"
-                                                   OnValidatingFile="RadUpload1_ValidatingFile" ControlObjectsVisibility="None" 
-                                                   Width="371px">
+                                                   OnValidatingFile="RadUpload1_ValidatingFile" ControlObjectsVisibility="None"  PostbackTriggers="btnCargar"
+                                                   Width="371px" TemporaryFolder="~/TermFiles" OnClientFileUploaded="onClientFileUploaded">
                                 </telerik:RadAsyncUpload>
                                 <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="Por favor seleccione un fichero."
                                                      OnServerValidate="CustomValidator1_ServerValidate" CssClass="normalTextRed"></asp:CustomValidator>

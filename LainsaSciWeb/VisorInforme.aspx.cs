@@ -58,11 +58,14 @@ public partial class VisorInforme : System.Web.UI.Page
                     this.Title = "Inventario por instalacion";
 
                     IList<int> lista = new List<int>();
+                    IList<int> lista20 = new List<int>();
                     foreach(Instalacion inst in CntLainsaSci.GetInstalaciones(usuario, ctx))
                     {
                         lista.Add(inst.InstalacionId);
+                        lista20.Add(inst.Empresa.EmpresaId);
                     }
                     rptInventario.ReportParameters["Empresa"].Visible = false;
+                    rptInventario.ReportParameters["Empresa"].Value = lista20;
                     rptInventario.ReportParameters["Instalaciones"].Value = lista;
                     ReportViewer1.Report = rptInventario;
                     break;

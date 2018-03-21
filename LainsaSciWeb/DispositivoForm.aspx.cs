@@ -558,7 +558,7 @@ public partial class DispositivoForm : System.Web.UI.Page
     protected void rdcInstalacion_SelectedIndexChanged1(object sender, RadComboBoxSelectedIndexChangedEventArgs e) {
          if(rdcInstalacion.SelectedValue != "") {
             Instalacion i = CntLainsaSci.GetInstalacion(int.Parse(rdcInstalacion.SelectedValue), ctx);
-            CargarTipos(i);
+            CargarTiposInstalacion(i);
             CargarAgentesExtintores(i.Empresa);
             CargarFabricantes(i.Empresa);
             rdcModelos.Items.Clear();
@@ -574,11 +574,12 @@ public partial class DispositivoForm : System.Web.UI.Page
     }
 
 
-    protected void CargarTipos(Instalacion i) {
+    protected void CargarTiposInstalacion(Instalacion i) {
         rdcTipoDisp.Items.Clear();
 
 
-        foreach(TipoDispositivo tp in CntLainsaSci.GetTipoDispositivos(usuario, ctx)) {
+        foreach (TipoDispositivo tp in CntLainsaSci.GetTipoDispositivos(usuario, ctx))
+        {
             // FALCKBDM-3
             if(tp.Empresa == null || tp.Empresa != null && tp.Instalacion == null && (tp.Empresa.EmpresaId == i.Empresa.EmpresaId) || (tp.Instalacion != null && tp.Instalacion.InstalacionId == i.InstalacionId)) {
                 rdcTipoDisp.Items.Add(new RadComboBoxItem(tp.Nombre, tp.TipoId.ToString()));

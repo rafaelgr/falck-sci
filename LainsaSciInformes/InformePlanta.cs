@@ -85,5 +85,21 @@ namespace LainsaSciInformes
             get { return plantilla; }
             set { plantilla = value; }
         }
+
+        private string observaciones;
+
+        public string Observaciones
+        {
+            get { return observaciones; }
+            set { observaciones = value; }
+        }
+
+        private string resultado;
+
+        public string Resultado
+        {
+            get { return resultado; }
+            set { resultado = value; }
+        }
     }
 }

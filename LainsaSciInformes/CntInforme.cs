@@ -82,6 +82,8 @@ namespace LainsaSciInformes
                     infpl.Fabricado = String.Format("{0:MM/yy}",r.Dispositivo.FechaFabricacion);
                 DateTime? ufecha = GetUltimaQuinquenal(r.Dispositivo);
                 if (!CntLainsaSci.FechaNula(ufecha)) infpl.UltQuinquenal = String.Format("{0:MM/yy}",(DateTime)ufecha);
+                if (r.Observaciones != null) infpl.Observaciones = r.Observaciones;
+                if (r.Resultado != null) infpl.Resultado = r.Resultado;
                 
                 // montaje de la pregunta para mostrar como HTML
                 foreach (Campo cmp in r.PlantillaRevision.Campos)
@@ -1374,12 +1376,32 @@ namespace LainsaSciInformes
                         if (pos1 < 0) break;
                         string c1 = valor.Substring(0, pos1); 
                         string c2 = valor.Substring(pos1 + 1, valor.Length - (pos1 + 1));
-                        miCampo = c1;
+                        switch (c1)
+                        {
+                            case "S":
+                                miCampo = "OK";
+                                break;
+                            case "N":
+                                miCampo = "MAL";
+                                break;
+                            case "NA":
+                                miCampo = "NO APLICA";
+                                break;
+                            case "NOK":
+                                miCampo = "MAL";
+                                break;
+                            default:
+                                miCampo = c1;
+                                break;
+                        }
+                        // miCampo = c1;
                         comenta = c2;
                     }
                     
                     bigCampo = String.Format("<b>{0}</b><br/><i>{1}</i><br/><br/><b>Comentarios: </b>{2}<br/>", dr.Campo.Nombre, miCampo, comenta);
                     rw.Campo = bigCampo;
+                    rw.Comentarios = r.Observaciones;
+                    rw.Resultado = r.Resultado;
                     lrw.Add(rw);
                 }
             }

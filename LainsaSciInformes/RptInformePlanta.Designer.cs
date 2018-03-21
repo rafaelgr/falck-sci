@@ -39,12 +39,12 @@ namespace LainsaSciInformes
             this.textBox20 = new Telerik.Reporting.TextBox();
             this.textBox21 = new Telerik.Reporting.TextBox();
             this.textBox22 = new Telerik.Reporting.TextBox();
-            this.textBox23 = new Telerik.Reporting.TextBox();
-            this.textBox24 = new Telerik.Reporting.TextBox();
             this.pageFooterSection1 = new Telerik.Reporting.PageFooterSection();
             this.textBox33 = new Telerik.Reporting.TextBox();
             this.textBox34 = new Telerik.Reporting.TextBox();
             this.textBox35 = new Telerik.Reporting.TextBox();
+            this.txtComentarios = new Telerik.Reporting.TextBox();
+            this.txtResultado = new Telerik.Reporting.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // PiePlantilla
@@ -83,7 +83,7 @@ namespace LainsaSciInformes
             this.textBox13.Angle = 0D;
             this.textBox13.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Mm(175.26200866699219D), Telerik.Reporting.Drawing.Unit.Mm(26.617084503173828D));
             this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Mm(81.275993347167969D), Telerik.Reporting.Drawing.Unit.Mm(5.0779809951782227D));
+            this.textBox13.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Mm(68.577995300292969D), Telerik.Reporting.Drawing.Unit.Mm(5.0779809951782227D));
             this.textBox13.Style.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.textBox13.Style.BorderColor.Default = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(128)))));
             this.textBox13.Style.BorderStyle.Default = Telerik.Reporting.Drawing.BorderType.Solid;
@@ -306,9 +306,9 @@ namespace LainsaSciInformes
             // textBox14
             // 
             this.textBox14.Angle = 0D;
-            this.textBox14.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Mm(256.54000854492188D), Telerik.Reporting.Drawing.Unit.Mm(26.617103576660156D));
+            this.textBox14.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Mm(243.84201049804688D), Telerik.Reporting.Drawing.Unit.Mm(26.617103576660156D));
             this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Mm(28.919052124023438D), Telerik.Reporting.Drawing.Unit.Mm(5.0779809951782227D));
+            this.textBox14.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Mm(41.617050170898438D), Telerik.Reporting.Drawing.Unit.Mm(5.0779809951782227D));
             this.textBox14.Style.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.textBox14.Style.BorderColor.Default = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(128)))));
             this.textBox14.Style.BorderStyle.Default = Telerik.Reporting.Drawing.BorderType.Solid;
@@ -379,7 +379,7 @@ namespace LainsaSciInformes
             // 
             // detail
             // 
-            this.detail.Height = Telerik.Reporting.Drawing.Unit.Inch(0.23625962436199188D);
+            this.detail.Height = Telerik.Reporting.Drawing.Unit.Inch(0.30000004172325134D);
             this.detail.Items.AddRange(new Telerik.Reporting.ReportItemBase[] {
             this.textBox15,
             this.textBox16,
@@ -389,8 +389,8 @@ namespace LainsaSciInformes
             this.textBox20,
             this.textBox21,
             this.textBox22,
-            this.textBox23,
-            this.textBox24});
+            this.txtComentarios,
+            this.txtResultado});
             this.detail.Name = "detail";
             this.detail.Style.BorderStyle.Bottom = Telerik.Reporting.Drawing.BorderType.Solid;
             this.detail.Style.BorderWidth.Bottom = Telerik.Reporting.Drawing.Unit.Pixel(1D);
@@ -510,34 +510,6 @@ namespace LainsaSciInformes
             this.textBox22.Style.Padding.Top = Telerik.Reporting.Drawing.Unit.Pixel(5D);
             resources.ApplyResources(this.textBox22, "textBox22");
             // 
-            // textBox23
-            // 
-            this.textBox23.Format = "{0:dd/MM/yy}";
-            this.textBox23.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(10.100000381469727D), Telerik.Reporting.Drawing.Unit.Inch(0D));
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(1.1385444402694702D), Telerik.Reporting.Drawing.Unit.Inch(0.23621988296508789D));
-            this.textBox23.Style.BorderStyle.Default = Telerik.Reporting.Drawing.BorderType.None;
-            this.textBox23.Style.BorderWidth.Default = Telerik.Reporting.Drawing.Unit.Pixel(1D);
-            this.textBox23.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(8D);
-            this.textBox23.Style.Padding.Bottom = Telerik.Reporting.Drawing.Unit.Pixel(5D);
-            this.textBox23.Style.Padding.Left = Telerik.Reporting.Drawing.Unit.Pixel(5D);
-            this.textBox23.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Pixel(5D);
-            this.textBox23.Style.Padding.Top = Telerik.Reporting.Drawing.Unit.Pixel(5D);
-            // 
-            // textBox24
-            // 
-            this.textBox24.Format = "{0:dd/MM/yy}";
-            this.textBox24.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(6.9000792503356934D), Telerik.Reporting.Drawing.Unit.Inch(0D));
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(3.1998414993286133D), Telerik.Reporting.Drawing.Unit.Inch(0.23621988296508789D));
-            this.textBox24.Style.BorderStyle.Default = Telerik.Reporting.Drawing.BorderType.None;
-            this.textBox24.Style.BorderWidth.Default = Telerik.Reporting.Drawing.Unit.Pixel(1D);
-            this.textBox24.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(8D);
-            this.textBox24.Style.Padding.Bottom = Telerik.Reporting.Drawing.Unit.Pixel(5D);
-            this.textBox24.Style.Padding.Left = Telerik.Reporting.Drawing.Unit.Pixel(5D);
-            this.textBox24.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Pixel(5D);
-            this.textBox24.Style.Padding.Top = Telerik.Reporting.Drawing.Unit.Pixel(5D);
-            // 
             // pageFooterSection1
             // 
             this.pageFooterSection1.Height = Telerik.Reporting.Drawing.Unit.Inch(0.32755979895591736D);
@@ -585,6 +557,24 @@ namespace LainsaSciInformes
             this.textBox35.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             resources.ApplyResources(this.textBox35, "textBox35");
             // 
+            // txtComentarios
+            // 
+            this.txtComentarios.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Mm(175.26200866699219D), Telerik.Reporting.Drawing.Unit.Mm(0.0010093052405864D));
+            this.txtComentarios.Name = "txtComentarios";
+            this.txtComentarios.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Mm(68.577995300292969D), Telerik.Reporting.Drawing.Unit.Mm(5.9999728202819824D));
+            this.txtComentarios.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(8D);
+            this.txtComentarios.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            resources.ApplyResources(this.txtComentarios, "txtComentarios");
+            // 
+            // txtResultado
+            // 
+            this.txtResultado.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Mm(243.84201049804688D), Telerik.Reporting.Drawing.Unit.Mm(0D));
+            this.txtResultado.Name = "txtResultado";
+            this.txtResultado.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Mm(41.617031097412109D), Telerik.Reporting.Drawing.Unit.Mm(6.00098180770874D));
+            this.txtResultado.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(8D);
+            this.txtResultado.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            resources.ApplyResources(this.txtResultado, "txtResultado");
+            // 
             // RptInformePlanta
             // 
             group1.GroupFooter = this.PiePlantilla;
@@ -605,7 +595,7 @@ namespace LainsaSciInformes
             this.PageSettings.PaperKind = System.Drawing.Printing.PaperKind.A4;
             this.Style.BackgroundColor = System.Drawing.Color.White;
             this.UnitOfMeasure = Telerik.Reporting.Drawing.UnitType.Mm;
-            this.Width = Telerik.Reporting.Drawing.Unit.Inch(11.238545417785645D);
+            this.Width = Telerik.Reporting.Drawing.Unit.Inch(11.299174308776856D);
             this.NeedDataSource += new System.EventHandler(this.RptInformePlanta_NeedDataSource);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
@@ -639,13 +629,13 @@ namespace LainsaSciInformes
         private Telerik.Reporting.TextBox textBox20;
         private Telerik.Reporting.TextBox textBox21;
         private Telerik.Reporting.TextBox textBox22;
-        private Telerik.Reporting.TextBox textBox23;
-        private Telerik.Reporting.TextBox textBox24;
         private Telerik.Reporting.TextBox textBox33;
         private Telerik.Reporting.TextBox textBox34;
         private Telerik.Reporting.TextBox textBox35;
         private Telerik.Reporting.HtmlTextBox htmlTextBox2;
         private Telerik.Reporting.TextBox textBox25;
         private Telerik.Reporting.PictureBox pictureBox2;
+        private Telerik.Reporting.TextBox txtComentarios;
+        private Telerik.Reporting.TextBox txtResultado;
     }
 }

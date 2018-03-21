@@ -51,6 +51,7 @@ namespace LainsaSciInformes
                     CntLainsaSci.GetValorCampo(dr.Valor), 
                     CntLainsaSci.GetComentarioCampo(dr.Valor));
             }
+            resumen = resumen.Replace('&', ' ');
             resumen = resumen + "<br/>";
             return resumen;
         }
